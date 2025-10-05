@@ -340,7 +340,10 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c185411ee68e34e80d186a22cd706c, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1 &377255177
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +397,9 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6, y: 0.7, z: 1.2}
   m_Center: {x: 0, y: 0.58, z: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &410087039
 GameObject:
@@ -1109,7 +1115,10 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1008898483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bd6461595c5cf8c44b1cfd4a457b9191,
@@ -1170,6 +1179,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1968357700}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1001 &1141140036
 PrefabInstance:
@@ -1616,7 +1628,10 @@ GameObject:
   m_PrefabInstance: {fileID: 1302340570}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1846173309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1769,9 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1937086444
 GameObject:
@@ -1849,7 +1867,10 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &1968357700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1934,6 +1955,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1008898484}
   m_SourcePrefab: {fileID: 100100000, guid: bd6461595c5cf8c44b1cfd4a457b9191, type: 3}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &2117027366
 GameObject:
@@ -2098,6 +2122,10 @@ SceneRoots:
   - {fileID: 575679605}
   - {fileID: 1302340570}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  - {fileID: 1968357700}
+>>>>>>> Stashed changes
 =======
   - {fileID: 1968357700}
 >>>>>>> Stashed changes
