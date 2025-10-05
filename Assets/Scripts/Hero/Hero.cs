@@ -7,13 +7,9 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-	public float moveSpeed;
-	public float turnSpeed;
-
     private Animator animator;
-	private CharacterController controller;
 
-	private Inventory inventory;
+	private Inventory inventory = new();
 	void OnTriggerEnter(Collider other)
 	{
         Item itemInRange;
@@ -29,30 +25,8 @@ public class Hero : MonoBehaviour
 			}
 		}
 	}
-
-
-
 	void Start()
 	{
-		CursorManipulation();
 		animator = GetComponentInChildren<Animator>();
-		controller = GetComponent<CharacterController>();
-	}
-
-	void Update()
-	{
-		MoveHero();
-		
-	}
-	void MoveHero()
-	{
-
-	}
-
-
-	void CursorManipulation()
-	{
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
 	}
 }

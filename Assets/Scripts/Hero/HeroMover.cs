@@ -6,59 +6,23 @@ using System.Runtime.CompilerServices;
 
 public class HeroMover : MonoBehaviour
 {
-    [Header("Component References")]
-    public Rigidbody playerRigidbody;
+    [SerializeField] private float _speed;
 
-    [Header("Movement Settings")]
-    public float movementSpeed = 3f;
-    public float turnSpeed = 0.1f;
+    private Vector3 rawInputMovement;
 
-
-    //Stored Values
-    private Vector3 movementDirection;
-
-
-    public void UpdateMovementData(Vector3 newMovementDirection)
+    private void FixedUpdate()
     {
-        movementDirection = newMovementDirection;
-    }
-
-    void FixedUpdate()
-    {
-        MoveThePlayer();
-        TurnThePlayer();
-    }
-
-    void MoveThePlayer()
-    {
-        Vector3 movement = CameraDirection(movementDirection) * movementSpeed * Time.deltaTime;
-        playerRigidbody.MovePosition(transform.position + movement);
-    }
-
-    void TurnThePlayer()
-    {
-        if (movementDirection.sqrMagnitude > 0.01f)
+        if (rawInputMovement.x != 0 || rawInputMovement.z != 0)
         {
 
-            Quaternion rotation = Quaternion.Slerp(playerRigidbody.rotation,
-                                                 Quaternion.LookRotation(CameraDirection(movementDirection)),
-                                                 turnSpeed);
-
-            playerRigidbody.MoveRotation(rotation);
-
+            transform.position += transform.TransformDirection(rawInputMovement) * _speed;
         }
     }
 
-
-    Vector3 CameraDirection(Vector3 movementDirection)
+    public void OnMove(InputAction.CallbackContext value)
     {
-        var cameraForward = playerRigidbody.transform.forward;
-        var cameraRight = playerRigidbody.transform.right;
-
-        cameraForward.y = 0f;
-        cameraRight.y = 0f;
-
-        return cameraForward * movementDirection.z + cameraRight * movementDirection.x;
-
+        Vector2 vector2 = value.ReadValue<Vector2>();
+        Debug.Log(vector2);
+        rawInputMovement = new Vector3(vector2.x, 0, vector2.y);
     }
 }
