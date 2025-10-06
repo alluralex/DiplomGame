@@ -6,10 +6,6 @@ TagManager:
   tags:
   - Item
   - ObjectGame
-<<<<<<< Updated upstream
-=======
-  - Car
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
