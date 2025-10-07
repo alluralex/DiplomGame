@@ -22,7 +22,6 @@ public class HeroMover : MonoBehaviour
     public void OnMove(InputAction.CallbackContext value)
     {
         Vector2 vector2 = value.ReadValue<Vector2>();
-        Debug.Log(vector2);
         rawInputMovement = new Vector3(vector2.x, 0, vector2.y);
     }
 }
