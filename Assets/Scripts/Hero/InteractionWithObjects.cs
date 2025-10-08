@@ -7,28 +7,10 @@ using static UnityEngine.UI.Image;
 
 public class InteractionWithObjects : MonoBehaviour
 {
-    private bool ObjectInRange = false;
-
     private ObjectGame objectGame;
 
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("ObjectGame"))
-    //    {
-    //        ObjectInRange = true;
-    //        objectGame = other.GetComponent<ObjectGame>();
-    //    }
-    //}
 
-    //void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("ObjectGame"))
-    //    {
-    //        ObjectInRange = false;
-    //        objectGame = null;
-    //    }
-    //}
 
     public void OnUse(InputAction.CallbackContext button)
     {
@@ -38,13 +20,11 @@ public class InteractionWithObjects : MonoBehaviour
 
             Ray ray = new Ray(transform.position, transform.forward);
 
-            //return defaultPhysicsScene.Raycast(origin, direction, out hitInfo);
-            if (Physics.Raycast(ray, out RaycastHit hit) == true)
+            if (Physics.Raycast(ray, out RaycastHit hit, 1, 1) == true)
             {
                 if (hit.collider.CompareTag("ObjectGame"))
                 {
                     objectGame = hit.collider.GetComponent<ObjectGame>();
-                    Debug.DrawRay(transform.position, transform.forward, Color.red);
                     DropResource();
                     MineResource();
                 }
@@ -74,7 +54,7 @@ public class InteractionWithObjects : MonoBehaviour
         {
             Vector3 randomOffset = new Vector3(
                 Random.Range(-0.7f, 0.7f),
-                0.5f,
+                0.2f,
                 Random.Range(-0.7f, 0.7f)
             );
 

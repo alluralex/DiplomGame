@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: "\u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u0440\u0443\u0434\u0430"
   hitsToBreak: 20
-  resourceDrop: {fileID: 1376044696880393316, guid: 84c185411ee68e34e80d186a22cd706c,
+  resourceDrop: {fileID: 5287693313907173894, guid: 55f5e38d7a24bec4d89169fde2921cc4,
     type: 3}
   dropAmount: 1
   currentHits: 0
