@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - ObjectGame
+  - Car
   layers:
   - Default
   - TransparentFX

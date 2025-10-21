@@ -10,6 +10,8 @@ public class Hero : MonoBehaviour
     private Animator animator;
 
 	private Inventory inventory = new();
+
+	//поднятие ресурсов с пола
 	void OnTriggerEnter(Collider other)
 	{
         Item itemInRange;

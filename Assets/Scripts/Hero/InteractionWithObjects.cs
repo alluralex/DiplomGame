@@ -9,7 +9,7 @@ public class InteractionWithObjects : MonoBehaviour
 {
     private ObjectGame objectGame;
 
-
+    private Hero hero = new Hero();
 
 
     public void OnUse(InputAction.CallbackContext button)
@@ -28,12 +28,21 @@ public class InteractionWithObjects : MonoBehaviour
                     DropResource();
                     MineResource();
                 }
+                if (hit.collider.CompareTag("Car"))
+                {
+                    hero = GetComponent<Hero>();
+                    GoToCar(hero);
+                }
             }
             else
             {
                 Debug.Log("Из тебя явно не выйдет хороший стрелок...");
             }
         }
+    }
+
+    private void GoToCar(Hero hero)
+    {
     }
 
     void MineResource()
