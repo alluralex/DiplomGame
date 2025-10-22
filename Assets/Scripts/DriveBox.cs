@@ -7,18 +7,20 @@ public class DriveBox : MonoBehaviour
     [SerializeField] Hero driver;
 
     [SerializeField] List<Hero> passengers;
-    public void GoToCarMorty(Hero player)
+    public void TryGoCar(Hero player)
     {
         if (driver == null)
         {
             driver = player;
+            //player.gameObject.SetActive(false);
         }
         else if (driver != null && passengers.Count <= 3)
         {
             passengers.Add(player);
+            //player.gameObject.SetActive(false);
         }
-        else 
-        { 
+        else
+        {
             Debug.Log("Тачка забита до отказа...");
         }
     }

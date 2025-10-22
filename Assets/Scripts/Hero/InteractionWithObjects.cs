@@ -7,11 +7,13 @@ using static UnityEngine.UI.Image;
 
 public class InteractionWithObjects : MonoBehaviour
 {
+
+
     private ObjectGame objectGame;
 
-    private Hero hero = new Hero();
+    [SerializeField] private Hero hero = new Hero();
 
-
+    [SerializeField] private DriveBox drivebox = new();
     public void OnUse(InputAction.CallbackContext button)
     {
         if (button.performed)
@@ -30,8 +32,9 @@ public class InteractionWithObjects : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("Car"))
                 {
-                    hero = GetComponent<Hero>();
-                    GoToCar(hero);
+                    hero = gameObject.GetComponent<Hero>();
+                    Debug.Log(hero+"попал");
+                    drivebox.TryGoCar(hero);
                 }
             }
             else
@@ -40,9 +43,10 @@ public class InteractionWithObjects : MonoBehaviour
             }
         }
     }
-
-    private void GoToCar(Hero hero)
+    
+    private void GoCar(Hero hero)
     {
+        drivebox.TryGoCar(hero);
     }
 
     void MineResource()
