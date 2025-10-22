@@ -34,6 +34,7 @@ public class InteractionWithObjects : MonoBehaviour
                 {
                     hero = gameObject.GetComponent<Hero>();
                     Debug.Log(hero+"попал");
+                    //hero.transform.SetParent(drivebox.transform);
                     drivebox.TryGoCar(hero);
                 }
             }

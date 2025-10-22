@@ -850,12 +850,12 @@ PrefabInstance:
     - target: {fileID: 9036459422391227382, guid: 8a5a80e267ffa7548bcb4cf848d6e49b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.792
+      value: 12.22
       objectReference: {fileID: 0}
     - target: {fileID: 9036459422391227382, guid: 8a5a80e267ffa7548bcb4cf848d6e49b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.432
       objectReference: {fileID: 0}
     - target: {fileID: 9036459422391227382, guid: 8a5a80e267ffa7548bcb4cf848d6e49b,
         type: 3}
@@ -908,6 +908,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8515219870012148044, guid: 8a5a80e267ffa7548bcb4cf848d6e49b,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5257537864448320414}
+    - targetCorrespondingSourceObject: {fileID: 8515219870012148044, guid: 8a5a80e267ffa7548bcb4cf848d6e49b,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5257537864448320412}
     - targetCorrespondingSourceObject: {fileID: 8515219870012148044, guid: 8a5a80e267ffa7548bcb4cf848d6e49b,
         type: 3}
@@ -932,8 +936,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79fb1b1633b775c479bfd9108d5b3fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DriveBox
+  _speedMove: 70
+  _speedRotate: 70
   driver: {fileID: 0}
   passengers: []
+  bodyOfCar: {fileID: 5257537864448320413}
+  rawInputMovement: {x: 0, y: 0, z: 0}
+  rawInputRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &5257537864448320413
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -942,7 +951,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988531764}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 0.05
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -959,8 +968,123 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &5257537864448320414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988531764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: e3f504df5f2d45a419f2aa7c1c1861ae,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bc3c4023-66ca-4a92-98a6-175cd51e73d5
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9b9300a6-5a5d-4bb6-910c-e3149db0e874
+    m_ActionName: 'Player/Look[/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0c9a4a3c-cc06-4e0b-b2cf-797894e5f62b
+    m_ActionName: 'Player/Use[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dc5ecaed-9a94-4317-bd38-bf16a4d3d67a
+    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 86aa441c-fa28-42b3-9c42-8575865968a1
+    m_ActionName: 'UI/Submit[/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 404cc9d4-5b66-4b7a-bbc3-e5f2b1471bd0
+    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3b8ff225-3963-4196-ae22-fc22aeacbd31
+    m_ActionName: 'UI/Point[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7eceb870-41cc-4cb7-bd60-fcdae22008b9
+    m_ActionName: 'UI/Click[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 03d1bec4-e40b-4d74-a037-6e2a2a37bfc3
+    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 99ed4ecc-4b45-40f0-95cf-31b9d21e6d49
+    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d9a9fe1a-49ab-4359-8fcd-dbc36f22c68f
+    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bae993f1-70ac-49c5-bbc3-5ad71ac51624
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 89ccddd5-1977-49f9-afd1-b6aaa1a70197
+    m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5257537864448320412}
+        m_TargetAssemblyTypeName: DriveBox, Assembly-CSharp
+        m_MethodName: OnRotateCar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 561c2358-cf3e-4d4b-b68f-31d443d410eb
+    m_ActionName: 'Car/Look[/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5257537864448320412}
+        m_TargetAssemblyTypeName: DriveBox, Assembly-CSharp
+        m_MethodName: OnMoveCar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 585fe074-1fe3-4d3f-a5bb-d2ab3a7daf22
+    m_ActionName: 'Car/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Car
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &6916126179060850533
 PrefabInstance:
   m_ObjectHideFlags: 0
