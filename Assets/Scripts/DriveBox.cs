@@ -9,12 +9,11 @@ public class DriveBox : MonoBehaviour
     [SerializeField] private float _speedRotate;
     [SerializeField] Hero driver;
     [SerializeField] List<Hero> passengers;
-
+    [SerializeField] Camera cameraCar;
     [SerializeField] private Rigidbody bodyOfCar;
 
     public Vector3 rawInputMovement;
     public Vector3 rawInputRotation;
-
 
     public void TryGoCar(Hero player)
     {
@@ -44,8 +43,8 @@ public class DriveBox : MonoBehaviour
             //if (rawInputMovement.x != 0 || rawInputMovement.z != 0)
             //{
             //}
-                bodyOfCar.AddTorque(rawInputRotation * _speedRotate * Time.deltaTime);
-                bodyOfCar.AddForce(rawInputMovement * _speedMove * Time.deltaTime);
+            transform.Rotate(rawInputRotation * _speedRotate * Time.deltaTime);
+            transform.position += transform.TransformDirection(rawInputMovement) * _speedMove;
         }
     }
 

@@ -33,8 +33,11 @@ public class InteractionWithObjects : MonoBehaviour
                 if (hit.collider.CompareTag("Car"))
                 {
                     hero = gameObject.GetComponent<Hero>();
-                    Debug.Log(hero+"попал");
-                    //hero.transform.SetParent(drivebox.transform);
+                    Debug.Log(hero + "попал");
+                    hero.transform.SetParent(drivebox.transform);
+                    hero.gameObject.SetActive(false);
+                    //hero.transform.localPosition = Vector3.zero + Vector3(0, 3, 0); // ставим в центр коробки
+                    //hero.transform.localRotation = Quaternion.identity;
                     drivebox.TryGoCar(hero);
                 }
             }
@@ -44,7 +47,7 @@ public class InteractionWithObjects : MonoBehaviour
             }
         }
     }
-    
+
     private void GoCar(Hero hero)
     {
         drivebox.TryGoCar(hero);
