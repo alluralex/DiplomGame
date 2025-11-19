@@ -10,7 +10,6 @@ public class DriveBox : MonoBehaviour
     [SerializeField] Hero driver;
     [SerializeField] List<Hero> passengers;
     [SerializeField] Camera cameraCar;
-    [SerializeField] private Rigidbody bodyOfCar;
 
     public Vector3 rawInputMovement;
     public Vector3 rawInputRotation;

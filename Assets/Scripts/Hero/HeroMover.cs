@@ -24,4 +24,5 @@ public class HeroMover : MonoBehaviour
         Vector2 vector2 = value.ReadValue<Vector2>();
         rawInputMovement = new Vector3(vector2.x, 0, vector2.y);
     }
+
 }
