@@ -4,7 +4,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMove : MonoBehaviour
 {
-    public Transform target;
+    public GameObject target;
     private Rigidbody rb;
     private Vector3 movement;
     private float speed = 0.5f;
@@ -13,10 +13,12 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+
+        target = GameObject.Find("BoxForCats");
     }
     void Update()
     {
-        Vector3 direction = target.position - transform.position;
+        Vector3 direction = target.transform.position - transform.position;
         direction.Normalize();
         movement = direction;
     }
@@ -25,18 +27,15 @@ public class EnemyMove : MonoBehaviour
         MoveChar(movement);
         RotateChar(movement);
     }
-
     private void RotateChar(Vector3 directionToTarget)
     {
-        Vector3 direction = target.position - transform.position;
+        Vector3 direction = target.transform.position - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
-
     private void MoveChar(Vector3 direction)
     {
         rb.MovePosition((Vector3)transform.position + (direction * speed * Time.deltaTime));
-
     }
 }
