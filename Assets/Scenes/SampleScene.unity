@@ -246,18 +246,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!114 &552956761 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1490082896694747512, guid: 558572bed2e896e4392c30b4c77c71f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 9199371300361327638}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7258307eb615e41853bb14d2504c81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &587230774 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3710445335627725808, guid: 558572bed2e896e4392c30b4c77c71f1,
@@ -1799,16 +1787,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 408290424110392627, guid: 558572bed2e896e4392c30b4c77c71f1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 408290424110392627, guid: 558572bed2e896e4392c30b4c77c71f1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 1481755316843012988, guid: 558572bed2e896e4392c30b4c77c71f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1859,31 +1837,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3678092491302568529, guid: 558572bed2e896e4392c30b4c77c71f1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.329
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678092491302568529, guid: 558572bed2e896e4392c30b4c77c71f1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.511
-      objectReference: {fileID: 0}
-    - target: {fileID: 5289116034281597185, guid: 558572bed2e896e4392c30b4c77c71f1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6915541340306449138, guid: 558572bed2e896e4392c30b4c77c71f1,
-        type: 3}
-      propertyPath: m_Name
-      value: CameraHero
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934341447342684867, guid: 558572bed2e896e4392c30b4c77c71f1,
-        type: 3}
-      propertyPath: hero
-      value: 
-      objectReference: {fileID: 552956761}
     - target: {fileID: 8934341447342684867, guid: 558572bed2e896e4392c30b4c77c71f1,
         type: 3}
       propertyPath: drivebox
