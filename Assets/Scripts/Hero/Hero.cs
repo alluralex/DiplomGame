@@ -9,11 +9,11 @@ public class Hero : MonoBehaviour
 {
     private Animator animator;
 
-    private Inventory inventory = new();
-
     private int maxHealth = 5;
 
     private int health;
+
+    [SerializeField] private UiController uiController;
 
     //поднятие ресурсов с пола
     void OnTriggerEnter(Collider other)
@@ -21,11 +21,16 @@ public class Hero : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             Item itemInRange = other.GetComponent<Item>();
-            if (itemInRange != null)
+            if (itemInRange != null && uiController.FullInventory())
             {
-                inventory.AddToInventory(itemInRange);
+
                 Debug.Log($"{itemInRange.name} был подобран!");
+                uiController.AddToInventoryUI(itemInRange);
                 Destroy(itemInRange.gameObject);
+            }
+            else
+            {
+                Debug.Log("Инвентарь полный :(((");
             }
         }
     }
@@ -49,4 +54,6 @@ public class Hero : MonoBehaviour
     {
 
     }
+
+
 }

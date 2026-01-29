@@ -11,5 +11,6 @@ namespace Assets.Scripts
 	{
 		private int id;
 		public string Name;
+		public Texture2D Image;
 	}
 }

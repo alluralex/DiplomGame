@@ -13,8 +13,8 @@ public class DriveBox : MonoBehaviour
 
     [SerializeField] private float _speedMove;
     [SerializeField] private float _speedRotate;
-    [SerializeField] Hero driver;
-    [SerializeField] Camera cameraCar;
+    [SerializeField] private Hero driver;
+    [SerializeField] private Camera cameraCar;
 
     public Vector3 rawInputMovement;
     public Vector3 rawInputRotation;

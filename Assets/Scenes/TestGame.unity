@@ -22822,6 +22822,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1490082896694747512, guid: 558572bed2e896e4392c30b4c77c71f1,
+        type: 3}
+      propertyPath: uiController
+      value: 
+      objectReference: {fileID: 1079400268}
     - target: {fileID: 2508053642054724543, guid: 558572bed2e896e4392c30b4c77c71f1,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
@@ -38322,6 +38327,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958182791}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &958664336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1490082896694747512, guid: 558572bed2e896e4392c30b4c77c71f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 545400385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7258307eb615e41853bb14d2504c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &962095822
 GameObject:
   m_ObjectHideFlags: 0
@@ -42886,6 +42903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1079400267}
   - component: {fileID: 1079400266}
+  - component: {fileID: 1079400268}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -42932,6 +42950,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079400268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079400265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d2eab366b6d9b45a8b5e7293e7c6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiController
+  UIDocument: {fileID: 1079400266}
+  hero: {fileID: 958664336}
+  bebra: {fileID: 0}
 --- !u!1 &1081460324
 GameObject:
   m_ObjectHideFlags: 0

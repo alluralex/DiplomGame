@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Item
   Name: Iron ore
+  Image: {fileID: 2800000, guid: 00ab90d74ee66e446972902ec9eb2f19, type: 3}
 --- !u!1001 &3141977452059413578
 PrefabInstance:
   m_ObjectHideFlags: 0
