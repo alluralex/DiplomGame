@@ -1,0 +1,19 @@
+#SlotIcon
+{
+   width: 150px; 
+   height:           171px;
+   max-height:       171px; 
+   min-height:       171px; 
+   max-width: 150px; 
+   min-width: 150px; 
+   border: 1px solid rgb(75,75,75);
+   border-left-color: rgb(75, 75, 75); 
+   border-right-color: rgb(75, 75, 75); 
+   border-top-color: rgb(75, 75, 75); 
+   border-bottom-color: rgb(75, 75, 75); 
+   border-left-width: 1px; 
+   border-right-width: 1px; 
+   border-top-width: 1px; 
+   border-bottom-width: 1px;
+}
+

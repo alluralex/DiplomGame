@@ -9,26 +9,44 @@ public class Hero : MonoBehaviour
 {
     private Animator animator;
 
-	private Inventory inventory = new();
+    private Inventory inventory = new();
 
-	//поднятие ресурсов с пола
-	void OnTriggerEnter(Collider other)
-	{
-        Item itemInRange;
-		Debug.Log("я зашёл в колайдер с тегом:" + other.tag + " и с именем: " + other.name);
-		if (other.CompareTag("Item"))
-		{
-			itemInRange = other.GetComponent<Item>();
-			if (itemInRange != null)
-			{
-				inventory.AddToInventory(itemInRange);
-				Debug.Log($"{itemInRange.name} был подобран!");
-				Destroy(itemInRange.gameObject);
-			}
-		}
-	}
-	void Start()
-	{
-		animator = GetComponentInChildren<Animator>();
-	}
+    private int maxHealth = 5;
+
+    private int health;
+
+    //поднятие ресурсов с пола
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Item"))
+        {
+            Item itemInRange = other.GetComponent<Item>();
+            if (itemInRange != null)
+            {
+                inventory.AddToInventory(itemInRange);
+                Debug.Log($"{itemInRange.name} был подобран!");
+                Destroy(itemInRange.gameObject);
+            }
+        }
+    }
+    void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+
+        health = maxHealth;
+    }
+
+    void OnHealthChange(int damage)
+    {
+        health = health - damage;
+        if (health == 0)
+        {
+            HeroDie();
+        }
+    }
+
+    void HeroDie()
+    {
+
+    }
 }

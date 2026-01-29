@@ -1,0 +1,42 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20ToolKit/Meow.uss?fileID=7433441132597879392&amp;guid=37f192ec31cf74644b49b0796a5a16ae&amp;type=3#Meow" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgb(29, 29, 29); margin-top: 80px; margin-right: 80px; margin-bottom: 80px; margin-left: 80px; align-items: auto; justify-content: flex-start; border-left-color: rgba(126, 239, 255, 0.44); border-right-color: rgba(126, 239, 255, 0.44); border-top-color: rgba(126, 239, 255, 0.44); border-bottom-color: rgba(126, 239, 255, 0.44); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
+        <ui:VisualElement name="Header" style="flex-grow: 1; -unity-text-align: upper-left; align-items: flex-start; justify-content: flex-start; flex-direction: row; align-self: flex-start; align-content: flex-start; flex-wrap: nowrap; width: 100%; height: 15%; min-height: 15%; max-height: 15%; background-color: rgb(38, 42, 46); -unity-text-outline-color: rgb(255, 255, 255); -unity-text-outline-width: 0; letter-spacing: 0; word-spacing: 0; -unity-paragraph-spacing: 0; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgba(127, 239, 255, 0.43); border-right-color: rgba(127, 239, 255, 0.43); border-top-color: rgba(127, 239, 255, 0.43); border-bottom-color: rgba(127, 239, 255, 0.43);">
+            <ui:Button name="Inventory" icon-image="project://database/Assets/Sprites/2D_Objects/BackpackIco.png?fileID=2800000&amp;guid=68496182c50ad4b4d841323b392cda39&amp;type=3#BackpackIco" style="border-top-left-radius: 36px; border-top-right-radius: 36px; border-bottom-right-radius: 36px; border-bottom-left-radius: 36px; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(180, 255, 174, 0.18);" />
+            <ui:Button name="Craft" icon-image="project://database/Assets/Sprites/2D_Objects/Hammer.png?fileID=2800000&amp;guid=359f288c0ca549d44ab0de2c0457f7a5&amp;type=3#Hammer" style="border-top-left-radius: 36px; border-top-right-radius: 36px; border-bottom-right-radius: 36px; border-bottom-left-radius: 36px; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(255, 216, 174, 0.18);" />
+            <ui:Button name="Furnace" icon-image="project://database/Assets/Sprites/2D_Objects/Bake.png?fileID=2800000&amp;guid=00ab90d74ee66e446972902ec9eb2f19&amp;type=3#Bake" style="border-top-left-radius: 36px; border-top-right-radius: 36px; border-bottom-right-radius: 36px; border-bottom-left-radius: 36px; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(122, 149, 152, 0.18);" />
+            <ui:Button name="Upgrade" icon-image="project://database/Assets/Sprites/2D_Objects/Upgrade.png?fileID=2800000&amp;guid=1994085917fe79c498ef486ed31c9189&amp;type=3#Upgrade" style="border-top-left-radius: 36px; border-top-right-radius: 36px; border-bottom-right-radius: 36px; border-bottom-left-radius: 36px; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(255, 255, 255, 0.18);" />
+            <ui:Button name="Shop" icon-image="project://database/Assets/Sprites/2D_Objects/Money.png?fileID=2800000&amp;guid=3b416ecf3559b9d4ba1af169b8dd1e40&amp;type=3#Money" style="border-top-left-radius: 36px; border-top-right-radius: 36px; border-bottom-right-radius: 36px; border-bottom-left-radius: 36px; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(245, 255, 23, 0.18); left: 59%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Body" style="flex-grow: 1; flex-direction: row-reverse; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+            <ui:VisualElement name="Inventory" style="flex-grow: 1; align-items: center; justify-content: center; margin-right: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0; margin-left: 0;">
+                <ui:VisualElement name="Grid" style="flex-direction: row; height: 900px; width: 100%; flex-wrap: wrap;">
+                    <ui:VisualElement name="SlotIcon" style="background-image: url(&quot;project://database/Assets/Sprites/3D_Objects/Car/Cat.jpg?fileID=2800000&amp;guid=7d7ba74eb1b2aa745ad3bf01d0bc152d&amp;type=3#Cat&quot;);" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                    <ui:VisualElement name="SlotIcon" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
