@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 8934341447342684867}
   - component: {fileID: 749727980324412353}
   - component: {fileID: 3154314527113328896}
+  - component: {fileID: 6637817707558320933}
   - component: {fileID: 1490082896694747512}
   - component: {fileID: 2508053642054724543}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -100,46 +101,6 @@ MonoBehaviour:
     m_ActionId: 9b9300a6-5a5d-4bb6-910c-e3149db0e874
     m_ActionName: 'Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dc5ecaed-9a94-4317-bd38-bf16a4d3d67a
-    m_ActionName: 'UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 86aa441c-fa28-42b3-9c42-8575865968a1
-    m_ActionName: 'UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 404cc9d4-5b66-4b7a-bbc3-e5f2b1471bd0
-    m_ActionName: 'UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3b8ff225-3963-4196-ae22-fc22aeacbd31
-    m_ActionName: 'UI/Point[/Mouse/position]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7eceb870-41cc-4cb7-bd60-fcdae22008b9
-    m_ActionName: 'UI/Click[/Mouse/leftButton]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 03d1bec4-e40b-4d74-a037-6e2a2a37bfc3
-    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 99ed4ecc-4b45-40f0-95cf-31b9d21e6d49
-    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d9a9fe1a-49ab-4359-8fcd-dbc36f22c68f
-    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bae993f1-70ac-49c5-bbc3-5ad71ac51624
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 89ccddd5-1977-49f9-afd1-b6aaa1a70197
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8934341447342684867}
         m_TargetAssemblyTypeName: InteractionWithObjects, Assembly-CSharp
@@ -155,6 +116,30 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0c9a4a3c-cc06-4e0b-b2cf-797894e5f62b
     m_ActionName: 'Player/Use[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6637817707558320933}
+        m_TargetAssemblyTypeName: InventoryMenu, Assembly-CSharp
+        m_MethodName: OpenInventoryMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: InventoryMenu.OpenInventoryMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 29c10aea-b61c-420c-8a3e-b7c73e2cc6a6
+    m_ActionName: 'UI/InventoryOpen[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 17a6265a-2af3-452c-b4d8-4511ed250307
+    m_ActionName: 'UI/InventoryTabRight[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3e9af82d-358e-46c7-b1b3-5f0d28c452fd
+    m_ActionName: 'UI/InventoryTabLeft[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -243,6 +228,19 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &6637817707558320933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408290424110392627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f1259b1d46be4e9cde5850dd6a311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryMenu
+  UIDocument: {fileID: 0}
 --- !u!114 &1490082896694747512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7258307eb615e41853bb14d2504c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiController: {fileID: 0}
 --- !u!136 &2508053642054724543
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -288,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9209774278399530506}
   - component: {fileID: 6461235130256847947}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HeroColider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -343,7 +342,7 @@ GameObject:
   - component: {fileID: 5016345555897430286}
   - component: {fileID: 3985487196209674834}
   - component: {fileID: 205332400926967215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +470,7 @@ GameObject:
   - component: {fileID: 3710445335627725808}
   - component: {fileID: 6220860747930039029}
   - component: {fileID: 5117462216403862574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CameraHero
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -529,7 +528,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

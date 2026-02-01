@@ -26,9 +26,15 @@ public class HeroRotator : MonoBehaviour
         transform.Rotate(rawInputRotation * _speed * Time.deltaTime);
     }
 
-    void CursosBlock()
+    public void CursosBlock()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false;
+    }
+
+    public void CursorUnblock()
+    {
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        UnityEngine.Cursor.visible = true;
     }
 }

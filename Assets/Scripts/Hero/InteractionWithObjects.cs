@@ -48,11 +48,6 @@ public class InteractionWithObjects : MonoBehaviour
         }
     }
 
-    private void GoCar(Hero hero)
-    {
-        drivebox.TryGoCar(hero);
-    }
-
     void MineResource()
     {
         objectGame.currentHits++;

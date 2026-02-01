@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Hero : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class Hero : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         health = maxHealth;
+
     }
 
     void OnHealthChange(int damage)
@@ -55,5 +57,5 @@ public class Hero : MonoBehaviour
 
     }
 
-
+    
 }

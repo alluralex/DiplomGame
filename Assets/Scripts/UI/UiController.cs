@@ -9,14 +9,12 @@ public class UiController : MonoBehaviour
     [SerializeField] private UIDocument UIDocument;
     [SerializeField] private Hero hero;
 
-    [SerializeField] public Item bebra;
-
-
-
     List<VisualElement> v;
     void Start()
     {
-        VisualElement Grid = UIDocument.rootVisualElement.Q<VisualElement>("Grid");
+        VisualElement Grid = UIDocument.rootVisualElement.Query<VisualElement>("GridInventory");
+
+        
 
         v = (List<VisualElement>)Grid.Children();
     }
@@ -44,4 +42,5 @@ public class UiController : MonoBehaviour
         }
         return false;
     }
+
 }
