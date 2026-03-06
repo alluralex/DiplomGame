@@ -1,135 +1,58 @@
-ï»¿using Assets.Scripts;
+using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class InventoryMenu : MonoBehaviour
 {
     [SerializeField] private UIDocument UIDocument;
+    [SerializeField] private Hero hero;
 
-    private VisualElement inventory;
-    private VisualElement craft;
-    private VisualElement furnace;
-    private VisualElement upgrade;
-    private VisualElement shop;
-    private VisualElement map;
+    private Item[] inventory = new Item[16];
 
+    List<VisualElement> v;
 
-    private VisualElement gridInventory;
-
-    private Button tabInventory;
-    private Button tabCraft;
-    private Button tabFurnace;
-    private Button tabUpgrade;
-    private Button tabshop;
-    private Button tabmap;
-
-    private VisualElement AllInventory;
-
-    private int currentIndex = 0;
-
-    void Awake()
+    void Start()
     {
-        AllInventory = UIDocument.rootVisualElement.Q<VisualElement>("Container");
+        VisualElement Grid = UIDocument.rootVisualElement.Query<VisualElement>("GridInventory");
 
-        inventory = UIDocument.rootVisualElement.Q<VisualElement>("Inventory");
-        craft = UIDocument.rootVisualElement.Q<VisualElement>("Craft");
-        furnace = UIDocument.rootVisualElement.Q<VisualElement>("Furnace");
-        upgrade = UIDocument.rootVisualElement.Q<VisualElement>("Upgrade");
-        shop = UIDocument.rootVisualElement.Q<VisualElement>("Shop");
-        map = UIDocument.rootVisualElement.Q<VisualElement>("Map");
-
-        gridInventory = UIDocument.rootVisualElement.Q<VisualElement>("GridInventory");
-
-        tabInventory = UIDocument.rootVisualElement.Q<Button>("TabInventory");
-        tabCraft = UIDocument.rootVisualElement.Q<Button>("TabCraft");
-        tabFurnace = UIDocument.rootVisualElement.Q<Button>("TabFurnace");
-        tabUpgrade = UIDocument.rootVisualElement.Q<Button>("TabUpgrade");
-        tabshop = UIDocument.rootVisualElement.Q<Button>("TabShop");
-        tabmap = UIDocument.rootVisualElement.Q<Button>("TabMap");
+        v = new List<VisualElement>(Grid.Children());
     }
-
-    public void OpenInventoryMenu(InputAction.CallbackContext button)
+    public void AddToInventoryUI(Item getItem)
     {
-        if (button.performed)
+        for (int i = 0; i < inventory.Length; i++)
         {
-            if (AllInventory.style.display == DisplayStyle.Flex)
+            if (inventory[i] == null && v[i].style.backgroundImage.value == null)
             {
-                AllInventory.style.display = DisplayStyle.None;
-                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-                UnityEngine.Cursor.visible = false;
-            }
-            else
-            {
-                AllInventory.style.display = DisplayStyle.Flex;
-                UnityEngine.Cursor.lockState = CursorLockMode.Confined;
-                UnityEngine.Cursor.visible = true;
+                inventory[i] = getItem;
+
+                v[i].style.backgroundImage = inventory[i].Image;
+
+                break;
             }
         }
     }
 
-    public void SetTab(int index)
+    public bool HasFreeSlot()
     {
-        currentIndex = index;
-        UpdateUI();
-    }
-
-    public void NextTab()
-    {
-        currentIndex = (currentIndex + 1) % 6;
-        UpdateUI();
-    }
-
-    public void PrevTab()
-    {
-        currentIndex = (currentIndex + 5) % 6;
-        UpdateUI();
-    }
-
-    private void UpdateUI()
-    {
-        Debug.Log(currentIndex + " Ð½Ñ‹Ð½ÐµÑˆÐ½Ð¸Ð¹ Ð¸Ð½Ð´ÐµÐºÑ");
-
-        gridInventory.style.display = DisplayStyle.Flex;
-
-        inventory.style.display = DisplayStyle.None;
-        craft.style.display = DisplayStyle.None;
-        furnace.style.display = DisplayStyle.None;
-        shop.style.display = DisplayStyle.None;
-        upgrade.style.display = DisplayStyle.None;
-        map.style.display = DisplayStyle.None;
-
-        switch (currentIndex)
+        for (int i = 0; i < inventory.Length; i++)
         {
-            case 0: inventory.style.display = DisplayStyle.Flex; break;
-            case 1: craft.style.display = DisplayStyle.Flex; break;
-            case 2: furnace.style.display = DisplayStyle.Flex; break;
-            case 3: upgrade.style.display = DisplayStyle.Flex; break;
-            case 4: shop.style.display = DisplayStyle.Flex; break;
-            case 5:
-                {
-                    map.style.display = DisplayStyle.Flex;
-                    gridInventory.style.display = DisplayStyle.None; break;
-                }
-                ;
+            if (inventory[i] == null)
+                return true;
         }
+
+        return false;
     }
 
-
-
-    public void OnTabNext(InputAction.CallbackContext button)
+    private void PointerUpEvent(PointerUpEvent pointerUp)
     {
-        if (button.performed)
-            PrevTab();
+        Debug.Log($"Òû ñõâàòèë ïðåäìåò! {pointerUp}");
     }
 
-    public void OnTabPrev(InputAction.CallbackContext button)
+    private void OnPointerDown(PointerDownEvent pointerDown)
     {
-        if (button.performed)
-            NextTab();
+        Debug.Log($"Òû óðîíèë ïðåäìåò! {pointerDown} bebra bebra bebra");
     }
+
 }
-
-

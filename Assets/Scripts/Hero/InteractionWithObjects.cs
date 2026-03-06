@@ -13,7 +13,7 @@ public class InteractionWithObjects : MonoBehaviour
 
     [SerializeField] private Hero hero = new Hero();
 
-    [SerializeField] private DriveBox drivebox = new();
+    [SerializeField] private DriveBox drivebox;
     public void OnUse(InputAction.CallbackContext button)
     {
         if (button.performed)
@@ -24,7 +24,7 @@ public class InteractionWithObjects : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, 1, 1) == true)
             {
-                if (hit.collider.CompareTag("ObjectGame"))
+                if (hit.collider.CompareTag("StoneTag") || hit.collider.CompareTag("TreeTag") || hit.collider.CompareTag("IronTag"))
                 {
                     objectGame = hit.collider.GetComponent<ObjectGame>();
                     DropResource();
@@ -43,7 +43,7 @@ public class InteractionWithObjects : MonoBehaviour
             }
             else
             {
-                Debug.Log("Из тебя явно не выйдет хороший стрелок...");
+                //Debug.Log("Из тебя явно не выйдет хороший стрелок...");
             }
         }
     }
@@ -51,7 +51,7 @@ public class InteractionWithObjects : MonoBehaviour
     void MineResource()
     {
         objectGame.currentHits++;
-        Debug.Log($"Добыча {objectGame.resourceName} {objectGame.currentHits}/{objectGame.hitsToBreak}");
+        //Debug.Log($"Добыча {objectGame.resourceName} {objectGame.currentHits}/{objectGame.hitsToBreak}");
 
         if (objectGame.currentHits >= objectGame.hitsToBreak)
         {

@@ -8,6 +8,9 @@ TagManager:
   - ObjectGame
   - Car
   - Enemy
+  - IronTag
+  - StoneTag
+  - TreeTag
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 140091265306796530}
   m_Layer: 0
   m_Name: StoneDropPref
-  m_TagString: ObjectGame
+  m_TagString: StoneTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

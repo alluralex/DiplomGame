@@ -9,8 +9,9 @@ namespace Assets.Scripts
 {
 	public class Item : MonoBehaviour
 	{
-		private int id;
 		public string Name;
 		public Texture2D Image;
-	}
+        public int buyPrice;
+        public int sellPrice;
+    }
 }

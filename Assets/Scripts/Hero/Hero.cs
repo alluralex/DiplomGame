@@ -14,7 +14,10 @@ public class Hero : MonoBehaviour
 
     private int health;
 
-    [SerializeField] private UiController uiController;
+    public int moneyHero = 5;
+
+    [SerializeField] private InventoryMenu uiController;
+    [SerializeField] private UiController menuUI;
 
     //поднятие ресурсов с пола
     void OnTriggerEnter(Collider other)
@@ -22,7 +25,7 @@ public class Hero : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             Item itemInRange = other.GetComponent<Item>();
-            if (itemInRange != null && uiController.FullInventory())
+            if (itemInRange != null && uiController.HasFreeSlot())
             {
 
                 Debug.Log($"{itemInRange.name} был подобран!");
@@ -41,6 +44,19 @@ public class Hero : MonoBehaviour
 
         health = maxHealth;
 
+        GetMoney(4);
+    }
+
+    void GetMoney(int moneySpend)
+    {
+        moneyHero += moneySpend;
+        menuUI.updateCountMoney(this);
+    }
+
+    public void SpendMoney(int moneyLose)
+    {
+        moneyHero -= moneyLose;
+        menuUI.updateCountMoney(this);
     }
 
     void OnHealthChange(int damage)
