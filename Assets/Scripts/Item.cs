@@ -11,7 +11,7 @@ namespace Assets.Scripts
 	{
 		public string Name;
 		public Texture2D Image;
-        public int buyPrice;
+        public int? buyPrice;
         public int sellPrice;
     }
 }

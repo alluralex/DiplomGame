@@ -20,8 +20,8 @@ public class UiController : MonoBehaviour
     private VisualElement shop;
     private VisualElement map;
 
-
     private VisualElement gridInventory;
+    private VisualElement HotBarSlots;
 
     private Button tabInventory;
     private Button tabCraft;
@@ -48,6 +48,7 @@ public class UiController : MonoBehaviour
         map = UIDocument.rootVisualElement.Q<VisualElement>("Map");
 
         gridInventory = UIDocument.rootVisualElement.Q<VisualElement>("GridInventory");
+        HotBarSlots = UIDocument.rootVisualElement.Q<VisualElement>("Hotbar");
 
         tabInventory = UIDocument.rootVisualElement.Q<Button>("TabInventory");
         tabCraft = UIDocument.rootVisualElement.Q<Button>("TabCraft");
@@ -57,6 +58,7 @@ public class UiController : MonoBehaviour
         tabmap = UIDocument.rootVisualElement.Q<Button>("TabMap");
 
         currentMoneyHero = UIDocument.rootVisualElement.Q<Label>("MoneyCount");
+
     }
 
     public void updateCountMoney(Hero heroForMoney)
@@ -71,12 +73,14 @@ public class UiController : MonoBehaviour
             if (AllInventory.style.display == DisplayStyle.Flex)
             {
                 AllInventory.style.display = DisplayStyle.None;
+                HotBarSlots.style.display = DisplayStyle.Flex;
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 UnityEngine.Cursor.visible = false;
             }
             else
             {
                 AllInventory.style.display = DisplayStyle.Flex;
+                HotBarSlots.style.display = DisplayStyle.None;
                 UnityEngine.Cursor.lockState = CursorLockMode.Confined;
                 UnityEngine.Cursor.visible = true;
             }
