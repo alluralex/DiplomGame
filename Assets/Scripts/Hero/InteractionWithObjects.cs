@@ -14,17 +14,28 @@ public class InteractionWithObjects : MonoBehaviour
     [SerializeField] private Hero hero = new Hero();
 
     [SerializeField] private DriveBox drivebox;
+
+    private DriveBox currentCar;
+
+    private bool isInCar = false;
+
     public void OnUse(InputAction.CallbackContext button)
     {
         if (button.performed)
         {
+            if (isInCar) 
+            {
+                ExitCar();
+                return;
+            }
+
             Vector3 newforward = new Vector3(transform.forward.x, transform.forward.y + 0.3f, transform.forward.z);
 
             Ray ray = new Ray(transform.position, transform.forward);
 
             if (Physics.Raycast(ray, out RaycastHit hit, 1, 1) == true)
             {
-                if (hit.collider.CompareTag("StoneTag") || hit.collider.CompareTag("TreeTag") || hit.collider.CompareTag("IronTag"))
+                if (hit.collider.CompareTag("StoneTag") || hit.collider.CompareTag("TreeTag") || hit.collider.CompareTag("IronTag") || hit.collider.CompareTag("CrystalTag"))
                 {
                     objectGame = hit.collider.GetComponent<ObjectGame>();
                     DropResource();
@@ -33,18 +44,32 @@ public class InteractionWithObjects : MonoBehaviour
                 if (hit.collider.CompareTag("Car"))
                 {
                     hero = gameObject.GetComponent<Hero>();
-                    Debug.Log(hero + "попал");
-                    hero.transform.SetParent(drivebox.transform);
-                    hero.gameObject.SetActive(false);
-                    //hero.transform.localPosition = Vector3.zero + Vector3(0, 3, 0); // ставим в центр коробки
-                    //hero.transform.localRotation = Quaternion.identity;
-                    drivebox.TryGoCar(hero);
+
+                    currentCar = hit.collider.GetComponentInParent<DriveBox>();
+
+                    hero.transform.SetParent(currentCar.seatPoint);
+                    hero.transform.localPosition = Vector3.zero;
+                    hero.transform.localRotation = Quaternion.identity;
+
+                    currentCar.TryGoCar(hero);
+
+                    hero.GetComponent<HeroMover>().enabled = false;
+                    hero.GetComponent<HeroRotator>().enabled = false;
+                    hero.GetComponentInChildren<Camera>().enabled = false;
+
+                    hero.GetComponent<Rigidbody>().isKinematic = true;
+                    hero.GetComponent<Collider>().enabled = false;
+
+                    isInCar = true;
+
                 }
             }
             else
             {
                 //Debug.Log("Из тебя явно не выйдет хороший стрелок...");
             }
+
+
         }
     }
 
@@ -74,5 +99,25 @@ public class InteractionWithObjects : MonoBehaviour
 
             Instantiate(objectGame.resourceDrop, spawnPosition, Quaternion.Euler(270, 0, 0));
         }
+    }
+
+    void ExitCar()
+    {
+        Vector3 exitPos = currentCar.transform.position + currentCar.transform.up * 1.5f;
+
+        hero.transform.SetParent(null);
+        hero.transform.position = exitPos;
+
+        hero.GetComponent<HeroMover>().enabled = true;
+        hero.GetComponent<HeroRotator>().enabled = true;
+        hero.GetComponentInChildren<Camera>().enabled = true;
+
+        hero.GetComponent<Rigidbody>().isKinematic = false;
+        hero.GetComponent<Collider>().enabled = true;
+
+        currentCar.RemoveDriver();
+
+        currentCar = null;
+        isInCar = false;
     }
 }

@@ -1,12 +1,12 @@
 using Assets.Scripts.Field;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class GridManager : MonoBehaviour
 {
     public GridCell[,] grid;
-
-
 
     private int width = 7;
     private int height = 7;
@@ -16,7 +16,7 @@ public class GridManager : MonoBehaviour
         InitializeGrid();
     }
 
-    
+
 
     void InitializeGrid()
     {
@@ -44,13 +44,20 @@ public class GridManager : MonoBehaviour
         var cell = grid[x, y];
 
 
-        //hero.SpendMoney(3);
+        if (!HasPurchasedNeighbour(cell.X, cell.Y))
+        {
+            Debug.Log("Нельзя купить т.к. они не соседи");
+            return;
+        }
         cell.State = CellState.Purchased;
 
-
         RemoveWalls(cell);
+        spawnPortal(cell);
         UpdateAvailableCells();
+
     }
+
+
 
     void RemoveWalls(GridCell cell)
     {
@@ -102,4 +109,27 @@ public class GridManager : MonoBehaviour
 
         return false;
     }
+
+    private void spawnPortal(GridCell cell)
+    {
+        var floorTransform = cell.WorldObject.transform.Find("Floor");
+        Renderer rend = floorTransform.GetComponent<Renderer>();
+
+        Bounds bounds = rend.bounds;
+
+        float padding = 1.5f;
+
+        float x = UnityEngine.Random.Range(bounds.min.x + padding, bounds.max.x - padding);
+        float z = UnityEngine.Random.Range(bounds.min.z + padding, bounds.max.z - padding);
+
+        Vector3 spawnPosition = new Vector3(x, bounds.center.y + 0.5f, z);
+
+        GameObject prefPortal = GameObject.FindGameObjectWithTag("PortTag");
+
+        float rotatePortalY = UnityEngine.Random.Range(0, 361);
+
+        Instantiate(prefPortal, spawnPosition, Quaternion.Euler(0, rotatePortalY, 0), cell.WorldObject.transform);
+    }
+
+    
 }

@@ -14,7 +14,7 @@ public class EnemyMove : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
 
-        target = GameObject.Find("BoxForCats");
+        target = GameObject.Find("CarGood");
     }
     void Update()
     {

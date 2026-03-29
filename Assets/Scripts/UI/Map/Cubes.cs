@@ -1,5 +1,6 @@
 using Assets.Scripts;
 using Assets.Scripts.Field;
+using System;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEditorInternal.Profiling.Memory.Experimental;
@@ -14,6 +15,8 @@ public class Cubes : MonoBehaviour
     private GridCell[,] gridMy;
 
     [SerializeField] private GridManager gridManager;
+
+
 
     void Start()
     {
@@ -38,17 +41,24 @@ public class Cubes : MonoBehaviour
 
                 button.clicked += () =>
                 {
-                    OnCellClicked(localX, localY);
+                    OnCellClicked(localX, localY, cell);
                     UpdateCellColor(cell);
                 };
             }
         }
     }
 
-    void OnCellClicked(int x, int y)
+    void OnCellClicked(int x, int y, GridCell cell)
     {
         Debug.Log($"Нажата клетка {x}:{y}");
-        gridManager.PurchaseCell(x, y);
+        if (cell.State != CellState.Purchased)
+        {
+            gridManager.PurchaseCell(x, y);
+        }
+        else {
+            Debug.Log("Ай блин, уже куплена клетка");
+
+        }
     }
 
     private void UpdateCellColor(GridCell cell)
@@ -67,4 +77,6 @@ public class Cubes : MonoBehaviour
                 return;
         }
     }
+
+
 }

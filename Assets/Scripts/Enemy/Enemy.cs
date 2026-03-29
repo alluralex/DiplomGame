@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public int ID;
     public float MaxHealth;
     public float Health;
     public float Damage;
-    public int ID;
     
     public void Init()
     {

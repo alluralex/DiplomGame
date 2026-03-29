@@ -15,7 +15,7 @@ public class GameLoopManager : MonoBehaviour
 
         StartCoroutine(GameLoop());
         InvokeRepeating("SummonTest", 0f, 1f);
-        InvokeRepeating("RemoveTest", 0f, 0.5f);
+        InvokeRepeating("RemoveTest", 0f, 0f);
     }
 
     void RemoveTest()
