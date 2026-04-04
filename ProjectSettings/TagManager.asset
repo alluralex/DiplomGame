@@ -13,6 +13,7 @@ TagManager:
   - TreeTag
   - PortTag
   - CrystalTag
+  - Tower
   layers:
   - Default
   - TransparentFX

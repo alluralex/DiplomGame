@@ -13,5 +13,13 @@ namespace Assets.Scripts
 		public Texture2D Image;
         public int? buyPrice;
         public int sellPrice;
+
+		public ItemType type;
     }
+
+	public enum ItemType
+	{
+		Resource,
+		Tower
+	}
 }

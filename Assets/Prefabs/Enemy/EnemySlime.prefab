@@ -115,6 +115,8 @@ MonoBehaviour:
   MaxHealth: 6
   Health: 0
   Damage: 1
+  MoneyDrop: 5
+  TypeEnemy: 1
 --- !u!1001 &5482471041337946372
 PrefabInstance:
   m_ObjectHideFlags: 0

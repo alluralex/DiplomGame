@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7876609599023362348
+--- !u!1 &5704495458398491317
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,141 +8,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5008317179947945703}
-  - component: {fileID: 3901707970913058819}
-  - component: {fileID: 8806425803524678539}
-  - component: {fileID: 353328863032347517}
-  - component: {fileID: 6213374884663576254}
-  m_Layer: 7
-  m_Name: CrystalDrop
-  m_TagString: Item
+  - component: {fileID: 4160447973635866213}
+  - component: {fileID: 845231669300856833}
+  m_Layer: 0
+  m_Name: CrystalProjectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5008317179947945703
+--- !u!4 &4160447973635866213
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7876609599023362348}
+  m_GameObject: {fileID: 5704495458398491317}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.274414, y: 2.7747808, z: 11.7329445}
+  m_LocalPosition: {x: -2.4137945, y: 0.71075875, z: 2.9872575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1690307564085621401}
+  - {fileID: 6206834516455643919}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3901707970913058819
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7876609599023362348}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 1024
-  m_LayerOverridePriority: 1
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.15, y: 0.18, z: 0.41}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8806425803524678539
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7876609599023362348}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 0
---- !u!135 &353328863032347517
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7876609599023362348}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.25
-  m_Center: {x: 0, y: 0.00001846399, z: 0}
---- !u!114 &6213374884663576254
+--- !u!114 &845231669300856833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7876609599023362348}
+  m_GameObject: {fileID: 5704495458398491317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b81df5efe263c48a4182444f65568b, type: 3}
+  m_Script: {fileID: 11500000, guid: 41685ca745200ac4ab8ab23fa88c5026, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Crystal
-  Image: {fileID: 2800000, guid: aea05e64ba3db3b479a056c2778d5352, type: 3}
-  sellPrice: 0
-  type: 0
---- !u!1001 &6568971335941843480
+  m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  speed: 10
+--- !u!1001 &1909414632180351886
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5008317179947945703}
+    m_TransformParent: {fileID: 4160447973635866213}
     m_Modifications:
     - target: {fileID: 5122653032643002939, guid: 2159c289b6a870c47a493b2fa75adf4f,
         type: 3}
       propertyPath: m_Name
       value: CrystalModel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5122653032643002939, guid: 2159c289b6a870c47a493b2fa75adf4f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5122653032643002939, guid: 2159c289b6a870c47a493b2fa75adf4f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 5502415121251817601, guid: 2159c289b6a870c47a493b2fa75adf4f,
         type: 3}
@@ -199,9 +114,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2159c289b6a870c47a493b2fa75adf4f, type: 3}
---- !u!4 &1690307564085621401 stripped
+--- !u!4 &6206834516455643919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5502415121251817601, guid: 2159c289b6a870c47a493b2fa75adf4f,
     type: 3}
-  m_PrefabInstance: {fileID: 6568971335941843480}
+  m_PrefabInstance: {fileID: 1909414632180351886}
   m_PrefabAsset: {fileID: 0}

@@ -1,7 +1,17 @@
+using Assets.Scripts;
 using UnityEngine;
 
-public class TowerStats : MonoBehaviour
+[CreateAssetMenu(menuName = "Tower Stats")]
+public class TowerStats : ScriptableObject
 {
+    public int id;
+    public int health;
+    public int damage;
 
+    public float range;
+    public float fireRate;
 
+    public string name;
+
+    public TypeAspect typeTower;
 }

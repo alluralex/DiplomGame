@@ -14,7 +14,7 @@ public class Hero : MonoBehaviour
 
     private int health;
 
-    public int moneyHero = 5;
+    public int moneyHero;
 
     [SerializeField] private InventoryMenu uiController;
     [SerializeField] private UiController menuUI;
@@ -44,10 +44,9 @@ public class Hero : MonoBehaviour
 
         health = maxHealth;
 
-        GetMoney(4);
     }
 
-    void GetMoney(int moneySpend)
+    public virtual void GetMoney(int moneySpend)
     {
         moneyHero += moneySpend;
         menuUI.updateCountMoney(this);
