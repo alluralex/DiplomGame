@@ -1,35 +1,39 @@
 using Assets.Scripts;
+using Assets.Scripts.Inventory;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class Hero : MonoBehaviour
 {
+    
+
     private Animator animator;
 
-    private int maxHealth = 5;
+    private int maxHealth;
 
     private int health;
 
     public int moneyHero;
 
-    [SerializeField] private InventoryMenu uiController;
-    [SerializeField] private UiController menuUI;
+    public Inventory inventory;
 
-    //поднятие ресурсов с пола
+    public event Action<int> OnMoneyChanged;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Item"))
         {
             Item itemInRange = other.GetComponent<Item>();
-            if (itemInRange != null && uiController.HasFreeSlot())
+            if (itemInRange != null && inventory.HaveFreeSlot())
             {
-
                 Debug.Log($"{itemInRange.name} был подобран!");
-                uiController.AddToInventoryUI(itemInRange);
+                inventory.AddToInventory(itemInRange.itemData);
                 Destroy(itemInRange.gameObject);
             }
             else
@@ -49,28 +53,12 @@ public class Hero : MonoBehaviour
     public virtual void GetMoney(int moneySpend)
     {
         moneyHero += moneySpend;
-        menuUI.updateCountMoney(this);
+        OnMoneyChanged(moneyHero);
     }
 
     public void SpendMoney(int moneyLose)
     {
         moneyHero -= moneyLose;
-        menuUI.updateCountMoney(this);
-    }
-
-    void OnHealthChange(int damage)
-    {
-        health = health - damage;
-        if (health == 0)
-        {
-            HeroDie();
-        }
-    }
-
-    void HeroDie()
-    {
-
-    }
-
-    
+        OnMoneyChanged(moneyHero);
+    }  
 }

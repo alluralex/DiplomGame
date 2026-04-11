@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df21bb6e0d8d6b47bdd85fb48915846, type: 3}
+  m_Name: IronOreToIronIngot
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.Bake.BakeRecipe
+  input: {fileID: 11400000, guid: 9695e5f2f537b8f4f9b4b5f5bfd634b7, type: 2}
+  fuel: {fileID: 11400000, guid: b1101d633696fb641afe18115d806350, type: 2}
+  result: {fileID: 11400000, guid: 5d08588e969607548933bcdba963169c, type: 2}

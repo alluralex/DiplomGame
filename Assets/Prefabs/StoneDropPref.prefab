@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceName: "\u041A\u0430\u043C\u0435\u043D\u044C"
-  hitsToBreak: 20
+  hitsToBreak: 10
   resourceDrop: {fileID: 5665481729623232147, guid: 0a3dd10d0c7dc2749943f3ac2b2f782b,
     type: 3}
   dropAmount: 1

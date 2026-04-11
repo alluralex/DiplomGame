@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62e0dae5ace60746902678701b1f170, type: 3}
+  m_Name: StoneWall
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.ItemData
+  ItemId: 100
+  Name: "\u041A\u0430\u043C\u0435\u043D\u043D\u0430\u044F \u0441\u0442\u0435\u043D\u0430"
+  Image: {fileID: 21300000, guid: 738c06959eba5ff4ab9d5fa80e623d51, type: 3}
+  buyPrice: 0
+  sellPrice: 30
+  type: 0

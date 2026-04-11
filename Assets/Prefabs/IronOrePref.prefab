@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceName: "\u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u0440\u0443\u0434\u0430"
-  hitsToBreak: 20
+  hitsToBreak: 5
   resourceDrop: {fileID: 5287693313907173894, guid: 55f5e38d7a24bec4d89169fde2921cc4,
     type: 3}
   dropAmount: 1

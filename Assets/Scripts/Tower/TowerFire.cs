@@ -13,7 +13,6 @@ public class TowerFire : MonoBehaviour
     public Transform turretPart = null;
     public float rotationSpeed = 10f;
 
-
     protected List<Enemy> enemiesInRange = new List<Enemy>();
 
     void Start()
