@@ -11,7 +11,7 @@ public class InteractionWithObjects : MonoBehaviour
 
     private ObjectGame objectGame;
 
-    [SerializeField] private Hero hero = new Hero();
+    [SerializeField] private Hero hero;
 
     [SerializeField] private DriveBox drivebox;
 
@@ -63,10 +63,25 @@ public class InteractionWithObjects : MonoBehaviour
                     isInCar = true;
 
                 }
+                if (hit.collider.CompareTag("Tower"))
+                {
+                    TowerFire tower = hit.collider.GetComponent<TowerFire>();
+                    if (tower != null && tower.towerItem != null)
+                    {
+                        if (hero.inventory.AddToInventory(tower.towerItem))
+                        {
+                            Destroy(tower.gameObject);
+                        }
+                        else
+                        {
+                            Debug.Log("Нет места в инвентаре, нельзя поднять башню");
+                        }
+                    }
+                }
             }
             else
             {
-                //Debug.Log("Из тебя явно не выйдет хороший стрелок...");
+                Debug.Log("Из тебя явно не выйдет хороший стрелок...");
             }
 
 

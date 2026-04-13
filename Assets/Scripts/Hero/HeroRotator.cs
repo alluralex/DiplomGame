@@ -12,7 +12,7 @@ public class HeroRotator : MonoBehaviour
 
     private void Start()
     {
-        CursosBlock();
+        //CursosBlock();
     }
 
     public void OnLook(InputAction.CallbackContext value)

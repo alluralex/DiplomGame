@@ -13,7 +13,13 @@ namespace Assets.Scripts.UI.InventoryUI
     {
 
         public Canvas UICanvas;
+
+        public Canvas InventoryCanvas;
+
+        public Canvas EscapeCanvas;
+
         public HeroRotator heroRotator;
+
 
         [SerializeField] private GameObject InventoryButton;
         [SerializeField] private GameObject CraftButton;
@@ -25,20 +31,49 @@ namespace Assets.Scripts.UI.InventoryUI
         public void OpenClose(InputAction.CallbackContext button)
         {
 
-            if (UICanvas.enabled == false)
+            if (InventoryCanvas.enabled == false && EscapeCanvas.enabled == true)
+            {
+                return;
+            }
+            else if(InventoryCanvas.enabled == false)
             {
                 heroRotator.CursorUnblock();
-                UICanvas.enabled = true;
+                UICanvas.enabled = false;
+                InventoryCanvas.enabled = true;
                 Time.timeScale = 0f;
             }
             else
             {
                 heroRotator.CursosBlock();
-                UICanvas.enabled = false;
+                UICanvas.enabled = true;
+                InventoryCanvas.enabled = false;
                 Time.timeScale = 1f;
             }
         }
 
+        public void OpenMenu(InputAction.CallbackContext button)
+        {
+            if (EscapeCanvas.enabled == false && InventoryCanvas.enabled == true)
+            {
+                return;
+            }
+            else if (EscapeCanvas.enabled == false)
+            {
+                heroRotator.CursorUnblock();
+                UICanvas.enabled = true;
+                InventoryCanvas.enabled = false;
+                EscapeCanvas.enabled = true;
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                heroRotator.CursosBlock();
+                UICanvas.enabled = true;
+                InventoryCanvas.enabled = false;
+                EscapeCanvas.enabled = false;
+                Time.timeScale = 1f;
+            }
+        }
         public void ShowWindowByIndex(int index)
         {
             InventoryButton.SetActive(false);

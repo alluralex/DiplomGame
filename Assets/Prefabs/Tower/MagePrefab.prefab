@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7798345287768456188}
   m_Layer: 0
   m_Name: MagePrefab
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 394882249340786445}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7955635, y: 0.66803455, z: 1.9818828}
+  m_LocalPosition: {x: -2.7955635, y: 0.7289764, z: 1.9818828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -95,6 +95,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5704495458398491317, guid: 40848075247eb7c4ba8f181daf19c5f6,
     type: 3}
   firePoint: {fileID: 2422255344546084677}
+  towerItem: {fileID: 11400000, guid: 166cfb7fb754d0b4f80af4d1475daedd, type: 2}
   turretPart: {fileID: 0}
   rotationSpeed: 10
 --- !u!1 &9221664856553015934

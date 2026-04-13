@@ -57,7 +57,7 @@ namespace Assets.Scripts.Inventory
 
             CurrentSlot.item = null;
             CurrentSlot.UpdateVisual();
-            CurrentSlot.onItemChanged?.Invoke(); 
+            CurrentSlot.onItemChanged?.Invoke();
 
             Hide();
         }

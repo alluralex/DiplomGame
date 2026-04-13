@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PlaceTower",
+                    "type": "Button",
+                    "id": "dbe2cb1c-e7c2-4162-8e1c-2022f30ee98a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -213,6 +222,17 @@
                 },
                 {
                     "name": "",
+                    "id": "5e550d74-de4c-49e4-9f8e-f38c0d38883a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6e1187b6-235a-4524-b7fc-3ca091cad90c",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -230,6 +250,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71a1016c-08b9-45ed-ab51-34e297115abf",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "PlaceTower",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -261,6 +292,15 @@
                     "name": "InventoryTabLeft",
                     "type": "Button",
                     "id": "3e9af82d-358e-46c7-b1b3-5f0d28c452fd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "OpenMenu",
+                    "type": "Button",
+                    "id": "06d050ea-771e-48ae-86e7-635c611e00dd",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -320,6 +360,105 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "InventoryTabLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0be8f661-3293-492d-aa97-a8304409e5fe",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Hotbar",
+            "id": "fad3e9aa-5073-439f-b102-9cdb5f3c2f60",
+            "actions": [
+                {
+                    "name": "1HotBar",
+                    "type": "Button",
+                    "id": "5633ec52-e8e6-4e4d-b773-f9262a29c0cb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "2HotBar",
+                    "type": "Button",
+                    "id": "10e637ce-30f9-499d-bdea-77e5f837ed13",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "3HotBar",
+                    "type": "Button",
+                    "id": "636f02ce-ebff-4ed5-81b3-a5d1b41e7da2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "4HotBar",
+                    "type": "Button",
+                    "id": "cf7f5fae-8669-48e3-86b6-f5042a0239da",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3e33de4c-5157-46e0-810c-7fa4dd7c104c",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1HotBar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5920904-a316-498c-92e5-da32c7ef528c",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2HotBar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f0beb9d-8c54-4123-9047-dc1340529ffc",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "3HotBar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16709554-e0f3-498d-ba3c-b68ee5ba5613",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "4HotBar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

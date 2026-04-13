@@ -12,7 +12,7 @@ public class SpawnResources : MonoBehaviour
         renderer = GetComponent<Renderer>();
         Vector3 floorbebra = renderer.bounds.size;
         Vector3 floorbebraCenter = renderer.bounds.center;
-        foreach (var item in ListPrefabs.prefabsObject)
+        foreach (var item in ListPrefabs.Instance.prefabsObject)
         {
             amountSpawn = Random.Range(1, 3);
 

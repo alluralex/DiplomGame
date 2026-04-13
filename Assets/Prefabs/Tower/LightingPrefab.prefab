@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8205289975501762840}
   m_Layer: 0
   m_Name: LightingPrefab
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8080582766024459012, guid: 50940a75772f0904090f35ee5c569190,
     type: 3}
   firePoint: {fileID: 1099926340778162908}
+  towerItem: {fileID: 11400000, guid: bd02ee331fc5387488478e652e4fff01, type: 2}
   turretPart: {fileID: 0}
   rotationSpeed: 10
 --- !u!1 &4134551939471931616

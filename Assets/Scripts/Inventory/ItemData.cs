@@ -17,6 +17,8 @@ namespace Assets.Scripts.Inventory
         public int buyPrice = 0;
         public int sellPrice;
 
+        public GameObject Tower;
+
         public ItemType type;
     }
 }

@@ -20,7 +20,7 @@ namespace Assets.Scripts.Inventory
             items = GetComponentsInChildren<Slot>().ToList();
         }
 
-        public void AddToInventory(ItemData data)
+        public bool AddToInventory(ItemData data)
         {
             foreach (Slot slot in items)
             {
@@ -28,9 +28,12 @@ namespace Assets.Scripts.Inventory
                 {
                     slot.item = data;
                     PrefabGet(slot);
-                    break;
+                    slot.onItemChanged?.Invoke();
+                    return true;
                 }
             }
+            Debug.Log("Инвентарь полон!");
+            return false;
         }
 
         public void PrefabGet(Slot slot)
@@ -59,6 +62,11 @@ namespace Assets.Scripts.Inventory
                 if (slot.item == null) return true; 
             }
             return false;
+        }
+
+        public Slot[] GetSlots()
+        {
+            return GetComponentsInChildren<Slot>();
         }
     }
 }

@@ -17,5 +17,6 @@ MonoBehaviour:
   damage: 6
   range: 8
   fireRate: 0.33
-  name: "\u0410\u0440\u0431\u0430\u043B\u0435\u0442"
+  Title: 
+  amountOfShots: 1
   typeTower: 2

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 using UnityEngine;
+using Assets.Scripts.Inventory;
 
 public class ObjectGame : MonoBehaviour
 {
@@ -13,5 +14,7 @@ public class ObjectGame : MonoBehaviour
 	public int dropAmount = 1;
 	public int currentHits = 0;
 
-	
+	[Header("Настройка башни")]
+
+	public ItemData towerItem;
 }

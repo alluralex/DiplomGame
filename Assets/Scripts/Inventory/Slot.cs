@@ -17,6 +17,8 @@ public class Slot : MonoBehaviour,
 
     private StatisticItem statisticItem;
 
+    [SerializeField] private GameObject defaultIconPrefab;
+
     private void Awake()
     {
         inventory = GetComponentInParent<Inventory>();
@@ -117,19 +119,34 @@ public class Slot : MonoBehaviour,
 
         Debug.Log("Предмет положен в слот");
     }
+
     public void UpdateVisual()
     {
         foreach (Transform child in transform)
             Destroy(child.gameObject);
         if (item == null) return;
 
+        GameObject prefabToUse = null;
+
         if (inventory != null && inventory.prefab != null)
+            prefabToUse = inventory.prefab;
+        else if (defaultIconPrefab != null)
+            prefabToUse = defaultIconPrefab;
+        else
         {
-            GameObject obj = Instantiate(inventory.prefab, transform);
-            obj.GetComponent<Image>().sprite = item.Image;
-            obj.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            Debug.LogError("Нет префаба иконки для слота!");
+            return;
         }
+
+        GameObject obj = Instantiate(prefabToUse, transform);
+        Image img = obj.GetComponent<Image>();
+        if (img != null)
+            img.sprite = item.Image;
+        else
+            Debug.LogError("Префаб иконки не содержит Image");
+
+        RectTransform rect = obj.GetComponent<RectTransform>();
+        if (rect != null)
+            rect.anchoredPosition = Vector2.zero;
     }
-
-
 }

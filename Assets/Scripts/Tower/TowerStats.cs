@@ -11,7 +11,9 @@ public class TowerStats : ScriptableObject
     public float range;
     public float fireRate;
 
-    public string name;
+    public string Title;
+
+    public int amountOfShots;
 
     public TypeAspect typeTower;
 }

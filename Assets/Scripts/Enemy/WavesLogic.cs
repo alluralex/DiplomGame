@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+
 
 namespace Assets.Scripts
 {
@@ -18,23 +19,20 @@ namespace Assets.Scripts
 
         private int currentWave = 0;
 
-        private Label timerLabel;
+        [SerializeField]private TextMeshProUGUI timerLabel;
 
-        private Label labelWave;
+        [SerializeField]private TextMeshProUGUI labelWave;
 
-        private Label labelWaveMax;
+        [SerializeField]private TextMeshProUGUI labelWaveMax;
 
         private void Start()
         {
-            var root = GetComponent<UIDocument>().rootVisualElement;
-
-            timerLabel = root.Q<Label>("SecondsLeft");
-
-            labelWave = root.Q<Label>("WaveLabelCurrent");
-
-            labelWaveMax = root.Q<Label>("WaveLabelEnd");
 
             labelWaveMax.text = MaxWave.ToString();
+
+            timerLabel.text = waveDuration.ToString();
+
+            labelWave.text = currentWave.ToString();
 
             StartWave();
         }

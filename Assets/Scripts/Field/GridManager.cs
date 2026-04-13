@@ -1,135 +1,182 @@
 using Assets.Scripts.Field;
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class GridManager : MonoBehaviour
 {
     public GridCell[,] grid;
+    [SerializeField] private Hero hero;       
+    [SerializeField] private GridUI gridUI;   
 
     private int width = 7;
     private int height = 7;
 
-    void Start()
+    private int selectedX = -1;
+    private int selectedY = -1;
+
+    private int cellCost = 30;
+
+    private void Start()
     {
         InitializeGrid();
     }
 
-
-
-    void InitializeGrid()
+    private void InitializeGrid()
     {
         grid = new GridCell[width, height];
-
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
+                GameObject worldObj = GameObject.Find($"Field({x};{y})");
                 grid[x, y] = new GridCell
                 {
                     X = x,
                     Y = y,
                     State = CellState.Locked,
-                    WorldObject = GameObject.Find($"Field({x};{y})")
+                    WorldObject = worldObj
                 };
             }
         }
-
         grid[3, 3].State = CellState.Purchased;
         UpdateAvailableCells();
+        gridUI.UpdateAllButtons();
     }
+
+    public void SelectCell(int x, int y)
+    {
+        var cell = grid[x, y];
+        if (cell.State == CellState.Available)
+        {
+            selectedX = x;
+            selectedY = y;
+            Debug.Log($"Выбрана клетка {x}:{y}");
+        }
+        else
+        {
+            selectedX = -1;
+            selectedY = -1;
+            Debug.Log($"Клетка {x}:{y} недоступна, выбор сброшен");
+        }
+    }
+
+    public void BuySelectedCell()
+    {
+        if (selectedX == -1 || selectedY == -1)
+        {
+            Debug.Log("Сначала выберите доступную клетку");
+            return;
+        }
+
+        var cell = grid[selectedX, selectedY];
+        if (cell.State != CellState.Available)
+        {
+            Debug.Log("Выбранная клетка больше недоступна");
+            selectedX = -1;
+            selectedY = -1;
+            return;
+        }
+
+        PurchaseCell(selectedX, selectedY);
+    }
+    public CellState GetCellState(int x, int y)
+    {
+        if (grid == null || x < 0 || x >= width || y < 0 || y >= height)
+            return CellState.Locked;
+        return grid[x, y].State;
+    }
+
     public void PurchaseCell(int x, int y)
     {
         var cell = grid[x, y];
 
-
-        if (!HasPurchasedNeighbour(cell.X, cell.Y))
+        if (cell.State == CellState.Purchased)
         {
-            Debug.Log("Нельзя купить т.к. они не соседи");
+            Debug.Log("Клетка уже куплена");
             return;
         }
+
+        if (!HasPurchasedNeighbour(x, y))
+        {
+            Debug.Log("Нет соседней купленной клетки");
+            return;
+        }
+
+        if (hero.moneyHero < cellCost)
+        {
+            Debug.Log("Не хватает денег");
+            return;
+        }
+
+        hero.SpendMoney(cellCost);
+
         cell.State = CellState.Purchased;
 
         RemoveWalls(cell);
-        spawnPortal(cell);
+        SpawnPortal(cell);
+
         UpdateAvailableCells();
 
+        gridUI.UpdateAllButtons();
+
+        Debug.Log($"Куплена клетка {x}:{y}");
     }
 
-
-
-    void RemoveWalls(GridCell cell)
+    private void RemoveWalls(GridCell cell)
     {
-        var walls = cell.WorldObject.transform.Find("Walls");
-
+        if (cell.WorldObject == null) return;
+        Transform walls = cell.WorldObject.transform.Find("Walls");
         if (walls != null)
             Destroy(walls.gameObject);
     }
 
-    void UpdateAvailableCells()
+    private void SpawnPortal(GridCell cell)
     {
-        for (int y = 0; y < height; y++)
-        {
-            for (int x = 0; x < width; x++)
-            {
-                var cell = grid[x, y];
+        if (cell.WorldObject == null) return;
+        Transform floor = cell.WorldObject.transform.Find("Floor");
+        if (floor == null) return;
 
-                if (cell.State == CellState.Purchased)
-                    continue;
-
-                if (HasPurchasedNeighbour(x, y))
-                    cell.State = CellState.Locked;
-            }
-        }
+        Renderer renderer = floor.GetComponent<Renderer>();
+        if (renderer == null) return;
+        Bounds bounds = renderer.bounds;
+        float padding = 1.5f;
+        float x = Random.Range(bounds.min.x + padding, bounds.max.x - padding);
+        float z = Random.Range(bounds.min.z + padding, bounds.max.z - padding);
+        Vector3 pos = new Vector3(x, bounds.center.y + 0.5f, z);
+        GameObject portalPrefab = GameObject.FindGameObjectWithTag("PortTag");
+        float rot = Random.Range(0, 360);
+        Instantiate(portalPrefab, pos, Quaternion.Euler(0, rot, 0), cell.WorldObject.transform);
     }
 
-    bool HasPurchasedNeighbour(int x, int y)
+    private void UpdateAvailableCells()
     {
-        Vector2Int[] directions =
-        {
-            new Vector2Int(1,0),
-            new Vector2Int(-1,0),
-            new Vector2Int(0,1),
-            new Vector2Int(0,-1)
-        };
+        for (int x = 0; x < width; x++)
+            for (int y = 0; y < height; y++)
+                if (grid[x, y].State != CellState.Purchased)
+                    grid[x, y].State = CellState.Locked;
 
-        foreach (var dir in directions)
+        for (int x = 0; x < width; x++)
+            for (int y = 0; y < height; y++)
+                if (grid[x, y].State != CellState.Purchased && HasPurchasedNeighbour(x, y))
+                    grid[x, y].State = CellState.Available;
+    }
+
+    private bool HasPurchasedNeighbour(int x, int y)
+    {
+        Vector2Int[] dirs = new Vector2Int[]
+        {
+                new Vector2Int(1,0),
+                new Vector2Int(-1,0),
+                new Vector2Int(0,1),
+                new Vector2Int(0,-1)
+        };
+        foreach (var dir in dirs)
         {
             int nx = x + dir.x;
             int ny = y + dir.y;
-
             if (nx >= 0 && nx < width && ny >= 0 && ny < height)
-            {
                 if (grid[nx, ny].State == CellState.Purchased)
-                    //Можно сделать перекрас в зелёный цвет
                     return true;
-            }
         }
-
         return false;
     }
-
-    private void spawnPortal(GridCell cell)
-    {
-        var floorTransform = cell.WorldObject.transform.Find("Floor");
-        Renderer rend = floorTransform.GetComponent<Renderer>();
-
-        Bounds bounds = rend.bounds;
-
-        float padding = 1.5f;
-
-        float x = UnityEngine.Random.Range(bounds.min.x + padding, bounds.max.x - padding);
-        float z = UnityEngine.Random.Range(bounds.min.z + padding, bounds.max.z - padding);
-
-        Vector3 spawnPosition = new Vector3(x, bounds.center.y + 0.5f, z);
-
-        GameObject prefPortal = GameObject.FindGameObjectWithTag("PortTag");
-
-        float rotatePortalY = UnityEngine.Random.Range(0, 361);
-
-        Instantiate(prefPortal, spawnPosition, Quaternion.Euler(0, rotatePortalY, 0), cell.WorldObject.transform);
-    }
-
-    
 }

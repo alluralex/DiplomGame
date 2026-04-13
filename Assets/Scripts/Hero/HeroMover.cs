@@ -9,7 +9,6 @@ public class HeroMover : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Vector3 rawInputMovement;
-
     private void FixedUpdate()
     {
         if (rawInputMovement.x != 0 || rawInputMovement.z != 0)

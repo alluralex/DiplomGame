@@ -23,10 +23,4 @@ public class ShopLogic : MonoBehaviour
 
         ItemsFromShop = (List<ShopItem>)root.Children();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 224738530916886688}
   m_Layer: 0
   m_Name: CrossbowPrefab
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4406372122932784233, guid: 9fd8dedadfd7cd842929b54e90fbae82,
     type: 3}
   firePoint: {fileID: 784466264521062695}
+  towerItem: {fileID: 11400000, guid: 7e04cc9daaacc474f93c784ff652186b, type: 2}
   turretPart: {fileID: 1535382361249532708}
   rotationSpeed: 10
 --- !u!1001 &521342596703957382

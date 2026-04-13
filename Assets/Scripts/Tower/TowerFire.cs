@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using Assets.Scripts.Inventory;
 
 public class TowerFire : MonoBehaviour
 {
     public TowerStats towerStats;
     public GameObject projectilePrefab;
     public Transform firePoint;
+    public ItemData towerItem;
 
     private float fireCooldown;
     private Enemy currentTarget;
@@ -30,7 +33,7 @@ public class TowerFire : MonoBehaviour
 
         RotateToTarget();
 
-        fireCooldown -= Time.deltaTime; 
+        fireCooldown -= Time.deltaTime;
 
         if (fireCooldown <= 0f)
         {
@@ -87,13 +90,15 @@ public class TowerFire : MonoBehaviour
 
     protected virtual void Attack(Enemy target)
     {
-        GameObject projectileStartAttack = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-
-        Projectile projectile = projectileStartAttack.GetComponent<Projectile>();
-
-        if (projectile != null)
+        // мультишот, но его не видно
+        for (int i = 0; i < towerStats.amountOfShots; i++)
         {
-            projectile.SetTarget(target, towerStats.damage, towerStats.typeTower);
+            GameObject projectileStartAttack = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Projectile projectile = projectileStartAttack.GetComponent<Projectile>();
+            if (projectile != null)
+            {
+                projectile.SetTarget(target, towerStats.damage, towerStats.typeTower);
+            }
         }
     }
 

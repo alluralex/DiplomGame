@@ -24518,6 +24518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2760f3ed4c2de4b4b967a50c8c5b87b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
+  hero: {fileID: 0}
+  gridUI: {fileID: 0}
 --- !u!4 &1060161181
 Transform:
   m_ObjectHideFlags: 0
@@ -25113,7 +25115,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1079400267}
   - component: {fileID: 1079400266}
-  - component: {fileID: 1079400271}
   - component: {fileID: 1079400270}
   - component: {fileID: 1079400272}
   m_Layer: 5
@@ -25174,20 +25175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0a8b334d4ea6147a64e3d45296a8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ListPrefabs
---- !u!114 &1079400271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079400265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a74520ff265d14cbd9c0e69013ec6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cubes
-  iDocument: {fileID: 1079400266}
-  gridManager: {fileID: 1060161180}
 --- !u!114 &1079400272
 MonoBehaviour:
   m_ObjectHideFlags: 0

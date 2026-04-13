@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class ListPrefabs : MonoBehaviour
 {
-    [SerializeField] static public GameObject prefTree ;
-    [SerializeField] static public GameObject prefStone;
-    [SerializeField] static public GameObject prefIron ;
-    [SerializeField] static public GameObject prefCrystal;
+    [SerializeField] private GameObject prefTree;
+    [SerializeField] private GameObject prefStone;
+    [SerializeField] private GameObject prefIron;
+    [SerializeField] private GameObject prefCrystal;
 
-    static public List<GameObject> prefabsObject = new List<GameObject>();
+    public List<GameObject> prefabsObject = new List<GameObject>();
 
-    public void Awake()
+    public static ListPrefabs Instance;
+
+    private void Awake()
     {
-        prefTree = GameObject.FindGameObjectWithTag("TreeTag");
-        prefStone = GameObject.FindGameObjectWithTag("StoneTag");
-        prefIron = GameObject.FindGameObjectWithTag("IronTag");
-        prefCrystal = GameObject.FindGameObjectWithTag("CrystalTag");
+        Instance = this;
         
+        prefabsObject.Clear();
 
         prefabsObject.Add(prefTree);
         prefabsObject.Add(prefStone);

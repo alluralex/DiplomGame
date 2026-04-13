@@ -118,6 +118,15 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlaceTower"",
+                    ""type"": ""Button"",
+                    ""id"": ""dbe2cb1c-e7c2-4162-8e1c-2022f30ee98a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -299,6 +308,17 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""5e550d74-de4c-49e4-9f8e-f38c0d38883a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""6e1187b6-235a-4524-b7fc-3ca091cad90c"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
@@ -316,6 +336,17 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71a1016c-08b9-45ed-ab51-34e297115abf"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""PlaceTower"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -347,6 +378,15 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
                     ""name"": ""InventoryTabLeft"",
                     ""type"": ""Button"",
                     ""id"": ""3e9af82d-358e-46c7-b1b3-5f0d28c452fd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""06d050ea-771e-48ae-86e7-635c611e00dd"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -406,6 +446,105 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""InventoryTabLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0be8f661-3293-492d-aa97-a8304409e5fe"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Hotbar"",
+            ""id"": ""fad3e9aa-5073-439f-b102-9cdb5f3c2f60"",
+            ""actions"": [
+                {
+                    ""name"": ""1HotBar"",
+                    ""type"": ""Button"",
+                    ""id"": ""5633ec52-e8e6-4e4d-b773-f9262a29c0cb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""2HotBar"",
+                    ""type"": ""Button"",
+                    ""id"": ""10e637ce-30f9-499d-bdea-77e5f837ed13"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""3HotBar"",
+                    ""type"": ""Button"",
+                    ""id"": ""636f02ce-ebff-4ed5-81b3-a5d1b41e7da2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""4HotBar"",
+                    ""type"": ""Button"",
+                    ""id"": ""cf7f5fae-8669-48e3-86b6-f5042a0239da"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""3e33de4c-5157-46e0-810c-7fa4dd7c104c"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""1HotBar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5920904-a316-498c-92e5-da32c7ef528c"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2HotBar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f0beb9d-8c54-4123-9047-dc1340529ffc"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""3HotBar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16709554-e0f3-498d-ba3c-b68ee5ba5613"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""4HotBar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -480,17 +619,26 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Use = m_Player.FindAction("Use", throwIfNotFound: true);
+        m_Player_PlaceTower = m_Player.FindAction("PlaceTower", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_InventoryOpen = m_UI.FindAction("InventoryOpen", throwIfNotFound: true);
         m_UI_InventoryTabRight = m_UI.FindAction("InventoryTabRight", throwIfNotFound: true);
         m_UI_InventoryTabLeft = m_UI.FindAction("InventoryTabLeft", throwIfNotFound: true);
+        m_UI_OpenMenu = m_UI.FindAction("OpenMenu", throwIfNotFound: true);
+        // Hotbar
+        m_Hotbar = asset.FindActionMap("Hotbar", throwIfNotFound: true);
+        m_Hotbar__1HotBar = m_Hotbar.FindAction("1HotBar", throwIfNotFound: true);
+        m_Hotbar__2HotBar = m_Hotbar.FindAction("2HotBar", throwIfNotFound: true);
+        m_Hotbar__3HotBar = m_Hotbar.FindAction("3HotBar", throwIfNotFound: true);
+        m_Hotbar__4HotBar = m_Hotbar.FindAction("4HotBar", throwIfNotFound: true);
     }
 
     ~@NyaDefence()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, NyaDefence.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, NyaDefence.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Hotbar.enabled, "This will cause a leak and performance issues, NyaDefence.Hotbar.Disable() has not been called.");
     }
 
     /// <summary>
@@ -569,6 +717,7 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Use;
+    private readonly InputAction m_Player_PlaceTower;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -592,6 +741,10 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Use".
         /// </summary>
         public InputAction @Use => m_Wrapper.m_Player_Use;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/PlaceTower".
+        /// </summary>
+        public InputAction @PlaceTower => m_Wrapper.m_Player_PlaceTower;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -627,6 +780,9 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
             @Use.started += instance.OnUse;
             @Use.performed += instance.OnUse;
             @Use.canceled += instance.OnUse;
+            @PlaceTower.started += instance.OnPlaceTower;
+            @PlaceTower.performed += instance.OnPlaceTower;
+            @PlaceTower.canceled += instance.OnPlaceTower;
         }
 
         /// <summary>
@@ -647,6 +803,9 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
             @Use.started -= instance.OnUse;
             @Use.performed -= instance.OnUse;
             @Use.canceled -= instance.OnUse;
+            @PlaceTower.started -= instance.OnPlaceTower;
+            @PlaceTower.performed -= instance.OnPlaceTower;
+            @PlaceTower.canceled -= instance.OnPlaceTower;
         }
 
         /// <summary>
@@ -687,6 +846,7 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_InventoryOpen;
     private readonly InputAction m_UI_InventoryTabRight;
     private readonly InputAction m_UI_InventoryTabLeft;
+    private readonly InputAction m_UI_OpenMenu;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -710,6 +870,10 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/InventoryTabLeft".
         /// </summary>
         public InputAction @InventoryTabLeft => m_Wrapper.m_UI_InventoryTabLeft;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/OpenMenu".
+        /// </summary>
+        public InputAction @OpenMenu => m_Wrapper.m_UI_OpenMenu;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -745,6 +909,9 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
             @InventoryTabLeft.started += instance.OnInventoryTabLeft;
             @InventoryTabLeft.performed += instance.OnInventoryTabLeft;
             @InventoryTabLeft.canceled += instance.OnInventoryTabLeft;
+            @OpenMenu.started += instance.OnOpenMenu;
+            @OpenMenu.performed += instance.OnOpenMenu;
+            @OpenMenu.canceled += instance.OnOpenMenu;
         }
 
         /// <summary>
@@ -765,6 +932,9 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
             @InventoryTabLeft.started -= instance.OnInventoryTabLeft;
             @InventoryTabLeft.performed -= instance.OnInventoryTabLeft;
             @InventoryTabLeft.canceled -= instance.OnInventoryTabLeft;
+            @OpenMenu.started -= instance.OnOpenMenu;
+            @OpenMenu.performed -= instance.OnOpenMenu;
+            @OpenMenu.canceled -= instance.OnOpenMenu;
         }
 
         /// <summary>
@@ -798,6 +968,135 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="UIActions" /> instance referencing this action map.
     /// </summary>
     public UIActions @UI => new UIActions(this);
+
+    // Hotbar
+    private readonly InputActionMap m_Hotbar;
+    private List<IHotbarActions> m_HotbarActionsCallbackInterfaces = new List<IHotbarActions>();
+    private readonly InputAction m_Hotbar__1HotBar;
+    private readonly InputAction m_Hotbar__2HotBar;
+    private readonly InputAction m_Hotbar__3HotBar;
+    private readonly InputAction m_Hotbar__4HotBar;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Hotbar".
+    /// </summary>
+    public struct HotbarActions
+    {
+        private @NyaDefence m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public HotbarActions(@NyaDefence wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Hotbar/_1HotBar".
+        /// </summary>
+        public InputAction @_1HotBar => m_Wrapper.m_Hotbar__1HotBar;
+        /// <summary>
+        /// Provides access to the underlying input action "Hotbar/_2HotBar".
+        /// </summary>
+        public InputAction @_2HotBar => m_Wrapper.m_Hotbar__2HotBar;
+        /// <summary>
+        /// Provides access to the underlying input action "Hotbar/_3HotBar".
+        /// </summary>
+        public InputAction @_3HotBar => m_Wrapper.m_Hotbar__3HotBar;
+        /// <summary>
+        /// Provides access to the underlying input action "Hotbar/_4HotBar".
+        /// </summary>
+        public InputAction @_4HotBar => m_Wrapper.m_Hotbar__4HotBar;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Hotbar; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="HotbarActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(HotbarActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="HotbarActions" />
+        public void AddCallbacks(IHotbarActions instance)
+        {
+            if (instance == null || m_Wrapper.m_HotbarActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_HotbarActionsCallbackInterfaces.Add(instance);
+            @_1HotBar.started += instance.On_1HotBar;
+            @_1HotBar.performed += instance.On_1HotBar;
+            @_1HotBar.canceled += instance.On_1HotBar;
+            @_2HotBar.started += instance.On_2HotBar;
+            @_2HotBar.performed += instance.On_2HotBar;
+            @_2HotBar.canceled += instance.On_2HotBar;
+            @_3HotBar.started += instance.On_3HotBar;
+            @_3HotBar.performed += instance.On_3HotBar;
+            @_3HotBar.canceled += instance.On_3HotBar;
+            @_4HotBar.started += instance.On_4HotBar;
+            @_4HotBar.performed += instance.On_4HotBar;
+            @_4HotBar.canceled += instance.On_4HotBar;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="HotbarActions" />
+        private void UnregisterCallbacks(IHotbarActions instance)
+        {
+            @_1HotBar.started -= instance.On_1HotBar;
+            @_1HotBar.performed -= instance.On_1HotBar;
+            @_1HotBar.canceled -= instance.On_1HotBar;
+            @_2HotBar.started -= instance.On_2HotBar;
+            @_2HotBar.performed -= instance.On_2HotBar;
+            @_2HotBar.canceled -= instance.On_2HotBar;
+            @_3HotBar.started -= instance.On_3HotBar;
+            @_3HotBar.performed -= instance.On_3HotBar;
+            @_3HotBar.canceled -= instance.On_3HotBar;
+            @_4HotBar.started -= instance.On_4HotBar;
+            @_4HotBar.performed -= instance.On_4HotBar;
+            @_4HotBar.canceled -= instance.On_4HotBar;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="HotbarActions.UnregisterCallbacks(IHotbarActions)" />.
+        /// </summary>
+        /// <seealso cref="HotbarActions.UnregisterCallbacks(IHotbarActions)" />
+        public void RemoveCallbacks(IHotbarActions instance)
+        {
+            if (m_Wrapper.m_HotbarActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="HotbarActions.AddCallbacks(IHotbarActions)" />
+        /// <seealso cref="HotbarActions.RemoveCallbacks(IHotbarActions)" />
+        /// <seealso cref="HotbarActions.UnregisterCallbacks(IHotbarActions)" />
+        public void SetCallbacks(IHotbarActions instance)
+        {
+            foreach (var item in m_Wrapper.m_HotbarActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_HotbarActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="HotbarActions" /> instance referencing this action map.
+    /// </summary>
+    public HotbarActions @Hotbar => new HotbarActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -891,6 +1190,13 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnUse(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PlaceTower" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPlaceTower(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
@@ -920,5 +1226,48 @@ public partial class @NyaDefence: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInventoryTabLeft(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "OpenMenu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnOpenMenu(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Hotbar" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="HotbarActions.AddCallbacks(IHotbarActions)" />
+    /// <seealso cref="HotbarActions.RemoveCallbacks(IHotbarActions)" />
+    public interface IHotbarActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "1HotBar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void On_1HotBar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "2HotBar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void On_2HotBar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "3HotBar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void On_3HotBar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "4HotBar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void On_4HotBar(InputAction.CallbackContext context);
     }
 }

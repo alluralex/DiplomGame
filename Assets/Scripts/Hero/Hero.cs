@@ -15,7 +15,7 @@ public class Hero : MonoBehaviour
 
     private Animator animator;
 
-    private int maxHealth;
+    [SerializeField] private int maxHealth = 3;
 
     private int health;
 
@@ -50,7 +50,7 @@ public class Hero : MonoBehaviour
 
     }
 
-    public virtual void GetMoney(int moneySpend)
+    public void GetMoney(int moneySpend)
     {
         moneyHero += moneySpend;
         OnMoneyChanged(moneyHero);

@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         playerHero.GetMoney(MoneyDrop);
+        //playerHero.Statistic.KilledEnemies += 1;
         Destroy(gameObject);
     }
 }
