@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Assets.Scripts.Inventory.Artefact.ListArtefacts
 {
     [CreateAssetMenu(menuName = "Artefacts/ArrowStandEffect")]
-    public class A_ArrowStand
+    public class A_ArrowStand : ArtefactEffect
     {
         public GameObject StandHero;
 
@@ -16,10 +16,10 @@ namespace Assets.Scripts.Inventory.Artefact.ListArtefacts
 
         public float AttackSpeed;
 
-        //public override void Apply(Hero hero)
-        //{
-        //    GameObject spirit = Instantiate(StandHero, hero.transform.position, Quaternion.identity);
-        //    spirit.transform.SetParent(hero.transform);
-        //}
+        public override void Apply(Hero hero)
+        {
+            GameObject spirit = Instantiate(StandHero, hero.transform.position, Quaternion.identity);
+            spirit.transform.SetParent(hero.transform);
+        }
     }
 }

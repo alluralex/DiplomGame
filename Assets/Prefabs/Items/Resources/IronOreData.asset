@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b62e0dae5ace60746902678701b1f170, type: 3}
+  m_Script: {fileID: 11500000, guid: adfe893007e19ed4881fa441f3f89816, type: 3}
   m_Name: IronOreData
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.ItemData
-  ItemId: 3
+  ItemId: 2
   Name: "\u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u0440\u0443\u0434\u0430"
   Image: {fileID: 21300000, guid: b744ac2fb5232014695c55cc1022c6a7, type: 3}
-  buyPrice: 10
-  sellPrice: 7
+  buyPrice: 5
+  sellPrice: 4
+  Tower: {fileID: 0}
+  artefactEffect: {fileID: 0}
   type: 0

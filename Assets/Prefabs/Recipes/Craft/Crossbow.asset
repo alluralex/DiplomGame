@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.CraftRecipe
   pattern:
   - {fileID: 11400000, guid: b1101d633696fb641afe18115d806350, type: 2}
-  - {fileID: 11400000, guid: 61d585bcf545b8a4493f15789a92add0, type: 2}
+  - {fileID: 11400000, guid: 5d08588e969607548933bcdba963169c, type: 2}
   - {fileID: 11400000, guid: b1101d633696fb641afe18115d806350, type: 2}
   - {fileID: 0}
   - {fileID: 11400000, guid: 61d585bcf545b8a4493f15789a92add0, type: 2}

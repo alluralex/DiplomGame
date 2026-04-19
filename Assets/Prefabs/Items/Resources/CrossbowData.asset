@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b62e0dae5ace60746902678701b1f170, type: 3}
+  m_Script: {fileID: 11500000, guid: adfe893007e19ed4881fa441f3f89816, type: 3}
   m_Name: CrossbowData
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.ItemData
-  ItemId: 11
+  ItemId: 100
   Name: "\u0410\u0440\u0431\u0430\u043B\u0435\u0442"
   Image: {fileID: 21300000, guid: c0e3164051fbb1f43a09049b74204273, type: 3}
   buyPrice: 0
-  sellPrice: 35
+  sellPrice: 30
+  Tower: {fileID: 0}
+  artefactEffect: {fileID: 0}
   type: 0

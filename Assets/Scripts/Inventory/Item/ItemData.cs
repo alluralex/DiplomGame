@@ -18,7 +18,7 @@ namespace Assets.Scripts.Inventory
         public int sellPrice;
 
         public GameObject Tower;
-        //public ArtefactEffect artefactEffect;
+        public ArtefactEffect artefactEffect;
 
         public ItemType type;
     }

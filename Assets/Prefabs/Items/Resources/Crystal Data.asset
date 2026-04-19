@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b62e0dae5ace60746902678701b1f170, type: 3}
+  m_Script: {fileID: 11500000, guid: adfe893007e19ed4881fa441f3f89816, type: 3}
   m_Name: Crystal Data
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.ItemData
-  ItemId: 4
+  ItemId: 3
   Name: "\u041A\u0440\u0438\u0441\u0442\u0430\u043B"
   Image: {fileID: 21300000, guid: aea05e64ba3db3b479a056c2778d5352, type: 3}
   buyPrice: 20
   sellPrice: 15
+  Tower: {fileID: 0}
+  artefactEffect: {fileID: 0}
   type: 0
