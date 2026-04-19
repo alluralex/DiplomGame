@@ -29,6 +29,7 @@ public class Slot : MonoBehaviour,
     {
         if (IsResultSlot) return;
         if (item == null) return;
+        if (eventData.button != PointerEventData.InputButton.Left) return;
 
         if (statisticItem != null && item != null)
         {

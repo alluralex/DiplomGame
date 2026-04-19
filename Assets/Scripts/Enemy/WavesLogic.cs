@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Field;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,8 @@ namespace Assets.Scripts
         private float currentTime;
 
         private int currentWave = 0;
+
+        private TypeAspect aspect;
 
         [SerializeField]private TextMeshProUGUI timerLabel;
 
@@ -66,6 +69,16 @@ namespace Assets.Scripts
 
         void NextWave()
         {
+
+            int randomIndex = UnityEngine.Random.Range(0, 3);
+            aspect = randomIndex switch
+            {
+                0 => TypeAspect.Lighting,
+                1 => TypeAspect.Magic,
+                2 => TypeAspect.Physics,
+                _ => TypeAspect.Lighting
+            };
+
             currentWave++;
             labelWave.text = currentWave.ToString();
             Debug.Log("Новая волна: " + currentWave);

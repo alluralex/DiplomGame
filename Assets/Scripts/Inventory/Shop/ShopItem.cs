@@ -31,7 +31,7 @@ namespace Assets.Scripts.Inventory.Shop
             {
                 MoneyHero.SpendMoney(slotItem.item.buyPrice);
                 
-                ShopManager.TakeResult(inventory, slotItem, slotItem.item.type);
+                ShopManager.TakeResult(inventory, slotItem, slotItem.item.type, MoneyHero);
 
                 CostItem.text = slotItem.item.buyPrice.ToString();
             }
