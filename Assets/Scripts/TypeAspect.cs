@@ -11,7 +11,8 @@ namespace Assets.Scripts
 
         Lighting = 0,
         Magic = 1,
-        Physics = 2
+        Physics = 2,
 
+        absolute = 3          
     }
 }

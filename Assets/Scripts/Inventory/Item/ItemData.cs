@@ -16,6 +16,7 @@ namespace Assets.Scripts.Inventory
         public Sprite Image;
         public int buyPrice = 0;
         public int sellPrice;
+        public int health;
 
         public GameObject Tower;
         public ArtefactEffect artefactEffect;

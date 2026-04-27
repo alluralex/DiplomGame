@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b1b7e5e14f52d4d859c4aee77aa3d0, type: 3}
   m_Name: Arrow
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.Artefact.ListArtefacts.A_ArrowStand
-  StandHero: {fileID: 0}
-  Damage: 30
-  AttackSpeed: 30
+  StandHero: {fileID: 394882249340786445, guid: 6f93a707cb47e2f419c296b8b2b047fa,
+    type: 3}

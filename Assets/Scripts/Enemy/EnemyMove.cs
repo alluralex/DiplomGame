@@ -5,6 +5,9 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyMove : MonoBehaviour
 {
     public GameObject target;
+
+    public bool IsNotMustRotate;
+
     private Rigidbody rb;
     private Vector3 movement;
     private float speed = 0.5f;
@@ -12,7 +15,7 @@ public class EnemyMove : MonoBehaviour
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
         target = GameObject.Find("CarGood");
     }
@@ -29,10 +32,14 @@ public class EnemyMove : MonoBehaviour
     }
     private void RotateChar(Vector3 directionToTarget)
     {
+        if (IsNotMustRotate == false)
+        {
+
         Vector3 direction = target.transform.position - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
     }
     private void MoveChar(Vector3 direction)
     {

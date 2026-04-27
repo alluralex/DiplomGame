@@ -14,6 +14,9 @@ namespace Assets.Scripts.Inventory.Upgrade
         [SerializeField] private Slot slotUpgrade;
         [SerializeField] private Button buttonForUpgrade;
         [SerializeField] private DriveBox Car;
+        [SerializeField] private UpgradeInfo upgradeInfo;
+
+        
 
         public void UpgradeCar()
         {
@@ -21,9 +24,12 @@ namespace Assets.Scripts.Inventory.Upgrade
             else
                 switch (slotUpgrade.item.ItemId)
                 {
-                    case 5:
+                    case 4:
                         Car.CurrentHealth += 5;
                         Debug.Log($"{Car.CurrentHealth}");
+                        break;
+                    case 6: 
+                        upgradeInfo.damageMultiplayer += 0.05f;
                         break;
                     default:
                         Debug.Log($"При помощи такого предмета нельзя улучшить: {slotUpgrade.item.Name}");

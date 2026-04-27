@@ -1,16 +1,12 @@
+using Assets.Scripts.Inventory;
 using UnityEngine;
+[CreateAssetMenu(menuName = "Artefacts/AxePickaxeEffect")]
 
-public class A_AxePickaxe : MonoBehaviour
+public class A_AxePickaxe : ArtefactEffect
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Apply(Hero hero)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        hero.upgradeInfo.ResourceMultiplayer += 20;
+        hero.Artefacts.Add(this);
     }
 }

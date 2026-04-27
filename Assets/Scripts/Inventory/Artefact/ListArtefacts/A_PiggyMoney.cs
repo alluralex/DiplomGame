@@ -6,6 +6,7 @@ public class A_PiggyMoney : ArtefactEffect
 {
     public override void Apply(Hero hero)
     {
-        throw new System.NotImplementedException();
+        hero.upgradeInfo.MoneyAdd += 1;
+        hero.Artefacts.Add(this);
     }
 }

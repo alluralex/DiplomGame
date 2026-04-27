@@ -10,5 +10,9 @@ namespace Assets.Scripts
     public static class GlobalEvents
     {
         public static UnityEvent<int> unityEvent = new();
+
+        public static Action OnBossDefeated;
+
+        public static Action CarCrashed;
     }
 }

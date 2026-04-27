@@ -1,10 +1,11 @@
+using Assets.Scripts;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms;
 
-public class DriveBox : MonoBehaviour
+public class DriveBox : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private WheelCollider LeftBackWheel;
     [SerializeField] private WheelCollider RightBackWheel;
@@ -31,7 +32,6 @@ public class DriveBox : MonoBehaviour
         if (driver == null)
         {
             driver = player;
-            //player.gameObject.SetActive(false);
         }
         else
         {
@@ -67,4 +67,13 @@ public class DriveBox : MonoBehaviour
             cameraCar.enabled = false;
     }
 
+    public void TakeDamage(int damage)
+    {
+        CurrentHealth -= damage;
+        if (CurrentHealth <= 0)
+        {
+            Destroy(this);
+            GlobalEvents.CarCrashed?.Invoke();
+        }
+    }
 }

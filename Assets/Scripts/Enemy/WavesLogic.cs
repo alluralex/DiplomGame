@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Field;
+﻿using Assets.Scripts.Enemy;
+using Assets.Scripts.Field;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,11 @@ namespace Assets.Scripts
 
         [SerializeField]private TextMeshProUGUI labelWaveMax;
 
+        [SerializeField] private GameObject FinalBoss;
+        [SerializeField] private Transform TransformBoss;
+
+        private bool bossSpawned;
+
         private void Start()
         {
 
@@ -56,6 +62,12 @@ namespace Assets.Scripts
             else 
             {
                 timerLabel.text = "убей босса!";
+                if (!bossSpawned)
+                {
+                    SpawnFinalBoss();
+                    timerLabel.text = "Убей босса!";
+                    bossSpawned = true;
+                }
             }
 
         }
@@ -94,6 +106,11 @@ namespace Assets.Scripts
             int secs = seconds % 60;
 
             timerLabel.text = $"{minutes:00}:{secs:00}";
+        }
+
+        void SpawnFinalBoss()
+        {
+            Instantiate(FinalBoss, TransformBoss.position, transform.rotation);
         }
     }
 }

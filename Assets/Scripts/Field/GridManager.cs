@@ -1,11 +1,12 @@
 using Assets.Scripts.Field;
+using Assets.Scripts.UI.GameEnd;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
     public GridCell[,] grid;
     [SerializeField] private Hero hero;       
-    [SerializeField] private GridUI gridUI;   
+    [SerializeField] public GridUI gridUI;   
 
     private int width = 7;
     private int height = 7;
@@ -13,8 +14,9 @@ public class GridManager : MonoBehaviour
     private int selectedX = -1;
     private int selectedY = -1;
 
-    private int cellCost = 30;
+    public int cellCost = 30;
 
+    public int moneyadd = 5;
     private void Start()
     {
         InitializeGrid();
@@ -108,7 +110,9 @@ public class GridManager : MonoBehaviour
         }
 
         hero.SpendMoney(cellCost);
-
+        StatisticAfterGame.TerritoryBuy++;
+        cellCost += moneyadd;
+        gridUI.CostZone.text = cellCost.ToString();
         cell.State = CellState.Purchased;
 
         RemoveWalls(cell);

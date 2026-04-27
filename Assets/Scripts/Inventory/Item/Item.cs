@@ -11,6 +11,8 @@ namespace Assets.Scripts
 	public class Item : MonoBehaviour
 	{
 		public ItemData itemData;
+
+        public bool isBeingPickedUp = false;
     }
 
 	public enum ItemType

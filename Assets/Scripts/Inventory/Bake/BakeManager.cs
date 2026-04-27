@@ -1,5 +1,6 @@
 using Assets.Scripts.Inventory;
 using Assets.Scripts.Inventory.Bake;
+using Assets.Scripts.UI.GameEnd;
 using UnityEngine;
 
 public class BakeManager : MonoBehaviour
@@ -56,7 +57,7 @@ public class BakeManager : MonoBehaviour
         }
 
         playerInventory.AddToInventory(resultSlot.item);
-
+        StatisticAfterGame.BakedItems++;
         inputSlot.item = null;
         fuelSlot.item = null;
 

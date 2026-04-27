@@ -6,9 +6,11 @@ namespace Assets.Scripts.Field
 {
     public class GridUI : MonoBehaviour
     {
-        [SerializeField] private GameObject buttonPrefab; // префаб с CellButton
-        [SerializeField] private Transform parent;        // контейнер для кнопок
-        [SerializeField] private GridManager gridManager; // перетащить в инспекторе!
+        [SerializeField] private GameObject buttonPrefab;
+        [SerializeField] private Transform parent;       
+        [SerializeField] private GridManager gridManager;
+
+        public TextMeshProUGUI CostZone;
 
         private int width = 7;
         private int height = 7;
@@ -40,7 +42,6 @@ namespace Assets.Scripts.Field
                 }
             }
 
-            // Обновляем цвета после создания сетки
             UpdateAllButtons();
         }
 

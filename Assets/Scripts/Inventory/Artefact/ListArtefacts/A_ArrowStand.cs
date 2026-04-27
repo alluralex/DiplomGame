@@ -12,14 +12,11 @@ namespace Assets.Scripts.Inventory.Artefact.ListArtefacts
     {
         public GameObject StandHero;
 
-        public int Damage;
-
-        public float AttackSpeed;
-
         public override void Apply(Hero hero)
         {
             GameObject spirit = Instantiate(StandHero, hero.transform.position, Quaternion.identity);
             spirit.transform.SetParent(hero.transform);
+            hero.Artefacts.Add(this);
         }
     }
 }

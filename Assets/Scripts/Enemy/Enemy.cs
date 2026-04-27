@@ -1,64 +1,67 @@
 using Assets.Scripts;
-using System;
+using Assets.Scripts.Enemy;
+using Assets.Scripts.UI.GameEnd;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int ID;
-    public float MaxHealth;
-    public float Health;
-    public float Damage;
-
-    public int MoneyDrop;
-
-    public TypeAspect TypeEnemy;
+    [SerializeField] private EnemyData enemyData;
 
     private Hero playerHero;
+    private float currentHealth;
 
     void Start()
     {
-        playerHero = FindAnyObjectByType<Hero>();
+        playerHero = FindFirstObjectByType<Hero>();
+        if (enemyData != null)
+            currentHealth = enemyData.MaxHealth;
     }
 
-    public void Init()
+    public void Init(EnemyData data)
     {
-        Health = MaxHealth;
+        enemyData = data;
+        currentHealth = enemyData.MaxHealth;
     }
 
-    float GetDamageMultiplier(TypeAspect damageType, TypeAspect enemyType)
+    private float GetDamageMultiplier(TypeAspect damageType, TypeAspect enemyType, float heroMultiplier)
     {
+        float typeMultiplier = 1f;
         if (damageType == enemyType)
-            return 1f;
+            typeMultiplier = 1f;
+        else if ((damageType == TypeAspect.Lighting && enemyType == TypeAspect.Magic) ||
+                 (damageType == TypeAspect.Magic && enemyType == TypeAspect.Physics) ||
+                 (damageType == TypeAspect.Physics && enemyType == TypeAspect.Lighting))
+            typeMultiplier = 1.5f;
+        else
+            typeMultiplier = 1f / 1.5f;
 
-        if (damageType == TypeAspect.Lighting && enemyType == TypeAspect.Magic)
-            return 1.5f;
-
-        if (damageType == TypeAspect.Magic && enemyType == TypeAspect.Physics)
-            return 1.5f;
-
-        if (damageType == TypeAspect.Physics && enemyType == TypeAspect.Lighting)
-            return 1.5f;
-
-        return 1f / 1.5f;
+        return typeMultiplier * heroMultiplier;
     }
 
     internal void TakeDamage(float damage, TypeAspect typeDamage)
     {
-        float multiplier = GetDamageMultiplier(typeDamage, TypeEnemy);
+        if (playerHero == null) return;
 
+        float heroMultiplier = playerHero.GetDamageMultiplayer();
+        float multiplier = GetDamageMultiplier(typeDamage, enemyData.TypeEnemy, heroMultiplier);
         float finalDamage = damage * multiplier;
 
-        Health -= finalDamage;
+        currentHealth -= finalDamage;
+        Debug.Log($"Урон: {finalDamage}, ХП осталось: {currentHealth}");
 
-        Debug.Log($"Урон: {finalDamage}, ХП осталось: {Health}");
-
-        if (Health <= 0) Die();
+        if (currentHealth <= 0) Die();
     }
 
-    private void Die()
+    public void Die()
     {
-        playerHero.GetMoney(MoneyDrop);
-        //playerHero.Statistic.KilledEnemies += 1;
+        if (enemyData.IsBoss == true)
+        {
+            GlobalEvents.OnBossDefeated?.Invoke();
+        }
+
+        int money = enemyData.MoneyDrop + (playerHero.upgradeInfo?.MoneyAdd ?? 0);
+        playerHero.GetMoney(money);
+        StatisticAfterGame.EnemiesKilled++;
         Destroy(gameObject);
     }
 }

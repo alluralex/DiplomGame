@@ -2,8 +2,9 @@ using UnityEngine;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Assets.Scripts.Inventory;
+using Assets.Scripts;
 
-public class TowerFire : MonoBehaviour
+public class TowerFire : MonoBehaviour, ITakeDamage
 {
     public TowerStats towerStats;
     public GameObject projectilePrefab;
@@ -119,4 +120,9 @@ public class TowerFire : MonoBehaviour
         );
     }
 
+    public void TakeDamage(int damage)
+    {
+        towerItem.health -= damage;
+        if (towerItem.health <= 0) Destroy(this);
+    }
 }

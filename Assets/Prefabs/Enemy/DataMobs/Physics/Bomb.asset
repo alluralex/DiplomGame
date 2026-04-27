@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75a5cc7ff1a92164f925489ea4f0c8c8, type: 3}
-  m_Name: Basic
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySummon
-  EnemyPrefab: {fileID: 1735476535947902823, guid: d053a5ce285b4f94f8ed1424553eb60e,
-    type: 3}
-  EnemyID: 1
+  m_Script: {fileID: 11500000, guid: 044f2bfd519c38944a20dd4ef06a1290, type: 3}
+  m_Name: Bomb
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Enemy.EnemyData
+  ID: 10
+  MaxHealth: 5
+  Health: 5
+  Damage: 5
+  MoneyDrop: 5
+  TypeEnemy: 2
+  IsBoss: 0

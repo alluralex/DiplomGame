@@ -16,8 +16,6 @@ namespace Assets.Scripts.UI.EscMenu
 
         [SerializeField] private GameObject Menu;
 
-        //[SerializeField] private StatisticHero statistic;
-
         [SerializeField] private Canvas MenuCanvas;
         public void ReturnToGame()
         {

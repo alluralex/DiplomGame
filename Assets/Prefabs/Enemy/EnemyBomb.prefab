@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3241175109317375803}
   - component: {fileID: 8172246223953146103}
   - component: {fileID: 1187890780103691141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBomb
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -98,12 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e5d205a0d866d45bb57f830b23c3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  ID: 3
-  MaxHealth: 9999
-  Health: 50
-  Damage: 2
-  MoneyDrop: 7
-  TypeEnemy: 2
+  enemyData: {fileID: 11400000, guid: e66f97724704d5041bb6199f6a206cbe, type: 2}
 --- !u!114 &1187890780103691141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,10 +170,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 349060213132955721, guid: c4a48b882c9d5db40a6b0235751c590d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 635547659545568360, guid: c4a48b882c9d5db40a6b0235751c590d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4a48b882c9d5db40a6b0235751c590d,
         type: 3}
       propertyPath: m_Name
       value: BombEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c4a48b882c9d5db40a6b0235751c590d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657560127643677590, guid: c4a48b882c9d5db40a6b0235751c590d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -17,10 +17,19 @@ namespace Assets.Scripts.Inventory.Shop
         [SerializeField] private Hero MoneyHero;
         [SerializeField] private Inventory inventory;
 
+
+
         public TextMeshProUGUI CostItem;
+
+        public void UpdateDisplay()
+        {
+            CostItem.text = slotItem.item.buyPrice.ToString();
+            inventory.PrefabGet(slotItem);
+        }
 
         private void Start()
         {
+            UpdateDisplay(); 
             CostItem.text = slotItem.item.buyPrice.ToString();
             inventory.PrefabGet(slotItem);
         }

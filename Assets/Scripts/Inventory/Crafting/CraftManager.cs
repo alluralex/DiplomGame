@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Inventory;
+using Assets.Scripts.UI.GameEnd;
 using System.Linq;
 using UnityEngine;
 
@@ -76,6 +77,7 @@ public class CraftManager : MonoBehaviour
         }
 
         playerInventory.AddToInventory(resultSlot.item);
+        StatisticAfterGame.CraftsComplete++;
 
         foreach (var slot in craftSlots)
         {

@@ -1,16 +1,11 @@
+using Assets.Scripts.Inventory;
 using UnityEngine;
-
-public class A_AbsolutMask : MonoBehaviour
+[CreateAssetMenu(menuName = "Artefacts/AbsolutMaskEffect")]
+public class A_AbsolutMask : ArtefactEffect
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Apply(Hero hero)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        hero.upgradeInfo.damageMultiplayer += 0.25f;
+        hero.Artefacts.Add(this);
     }
 }
