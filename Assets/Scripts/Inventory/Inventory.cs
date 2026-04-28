@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 namespace Assets.Scripts.Inventory
 {

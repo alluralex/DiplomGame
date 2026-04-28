@@ -17,6 +17,7 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: c4a419fda534f5a46bf243d350e303a3, type: 3}
   buyPrice: 0
   sellPrice: 70
-  Tower: {fileID: 919132149155446097, guid: 0df7e22b14366994fa6c14fc206994cf, type: 3}
+  health: 30
+  Tower: {fileID: 7432207431396103711, guid: 5a1ccd0449f6d6a4aadd62c1e5601400, type: 3}
   artefactEffect: {fileID: 0}
   type: 1

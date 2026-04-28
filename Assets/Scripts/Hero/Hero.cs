@@ -9,7 +9,6 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class Hero : MonoBehaviour
 {
@@ -39,10 +38,8 @@ public class Hero : MonoBehaviour
             Item itemInRange = other.GetComponent<Item>();
             if (itemInRange == null || itemInRange.isBeingPickedUp) return;
 
-            // Блокируем повторные вызовы
             itemInRange.isBeingPickedUp = true;
 
-            // Отключаем коллайдер (на случай, если флаг не сработает)
             other.enabled = false;
 
             if (inventory.HaveFreeSlot())

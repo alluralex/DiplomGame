@@ -1,6 +1,7 @@
 using Assets.Scripts;
 using Assets.Scripts.Enemy;
 using Assets.Scripts.UI.GameEnd;
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,6 +10,13 @@ public class Enemy : MonoBehaviour
 
     private Hero playerHero;
     private float currentHealth;
+
+   private float attackCooldown = 2f;
+   private int attackDamage = 10;
+
+    private Coroutine attackCoroutine;
+    private ITakeDamage currentTarget;
+
 
     void Start()
     {
@@ -63,5 +71,37 @@ public class Enemy : MonoBehaviour
         playerHero.GetMoney(money);
         StatisticAfterGame.EnemiesKilled++;
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.isTrigger) return;
+        ITakeDamage target = other.GetComponent<ITakeDamage>();
+        if (target == null) return;
+
+        if (attackCoroutine != null) StopCoroutine(attackCoroutine);
+        currentTarget = target;
+        attackCoroutine = StartCoroutine(AttackRoutine());
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        ITakeDamage target = other.GetComponent<ITakeDamage>();
+        if (target != null && target == currentTarget)
+        {
+            if (attackCoroutine != null)
+                StopCoroutine(attackCoroutine);
+            currentTarget = null;
+            attackCoroutine = null;
+        }
+    }
+
+    private IEnumerator AttackRoutine()
+    {
+        while (true)
+        {
+            currentTarget.TakeDamage(attackDamage);
+            yield return new WaitForSeconds(attackCooldown);
+        }
     }
 }

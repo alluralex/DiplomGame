@@ -1,9 +1,6 @@
 using Unity.VisualScripting;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.RuleTile.TilingRuleOutput;
-using static UnityEngine.UI.Image;
 
 public class InteractionWithObjects : MonoBehaviour
 {

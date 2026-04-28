@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 namespace Assets.Scripts.UI.GameEnd
 {
@@ -20,6 +21,7 @@ namespace Assets.Scripts.UI.GameEnd
         [SerializeField] TextMeshProUGUI CraftsComplete;
         [SerializeField] TextMeshProUGUI BakedItems;
 
+        [SerializeField] Canvas thisCanvas;
 
         [SerializeField] TextMeshProUGUI WinOrLose;
 
@@ -40,7 +42,7 @@ namespace Assets.Scripts.UI.GameEnd
             WinOrLose.text = "ПОБЕДА";
             FillStats();
             DisableControl();
-            gameObject.SetActive(true);
+            thisCanvas.enabled = true;
         }
 
         private void ShowDefeat()
@@ -48,7 +50,7 @@ namespace Assets.Scripts.UI.GameEnd
             WinOrLose.text = "ПОРАЖЕНИЕ...";
             FillStats();
             DisableControl();
-            gameObject.SetActive(true);
+            thisCanvas.enabled = true;
         }
 
         private void FillStats()

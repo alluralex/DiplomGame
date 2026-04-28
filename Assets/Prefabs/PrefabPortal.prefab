@@ -67,7 +67,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b62ec1b22230b49a7e1fd35eb6d7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PortalLogic
-  prefab: {fileID: 0}
+  PhysicsMobs:
+  - {fileID: 3059219687261562249, guid: b4e3312bfad1d4e4581c08750f458b12, type: 3}
+  - {fileID: 1735476535947902823, guid: d053a5ce285b4f94f8ed1424553eb60e, type: 3}
+  - {fileID: 1861968980446489157, guid: 645d05dd85e7d9147a35de64d5c294f6, type: 3}
+  LightingMobs:
+  - {fileID: 1735476535947902823, guid: d053a5ce285b4f94f8ed1424553eb60e, type: 3}
+  - {fileID: 1861968980446489157, guid: 645d05dd85e7d9147a35de64d5c294f6, type: 3}
+  - {fileID: 3059219687261562249, guid: b4e3312bfad1d4e4581c08750f458b12, type: 3}
+  MagicMobs:
+  - {fileID: 1735476535947902823, guid: d053a5ce285b4f94f8ed1424553eb60e, type: 3}
+  - {fileID: 1861968980446489157, guid: 645d05dd85e7d9147a35de64d5c294f6, type: 3}
+  - {fileID: 3059219687261562249, guid: b4e3312bfad1d4e4581c08750f458b12, type: 3}
 --- !u!1001 &2023229483713857655
 PrefabInstance:
   m_ObjectHideFlags: 0

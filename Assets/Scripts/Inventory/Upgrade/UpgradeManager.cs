@@ -25,7 +25,7 @@ namespace Assets.Scripts.Inventory.Upgrade
                 switch (slotUpgrade.item.ItemId)
                 {
                     case 4:
-                        Car.CurrentHealth += 5;
+                        Car.AddHealth(5);
                         Debug.Log($"{Car.CurrentHealth}");
                         break;
                     case 6: 

@@ -9,5 +9,6 @@ namespace Assets.Scripts
     public interface ITakeDamage
     {
         void TakeDamage(int damage);
+        bool IsAlive { get; }
     }
 }

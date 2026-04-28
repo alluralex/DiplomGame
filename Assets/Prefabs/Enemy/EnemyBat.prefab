@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3839668999555298021}
   - component: {fileID: 1947138952399131667}
   - component: {fileID: 7949668163880712102}
+  - component: {fileID: 8466117077666547510}
   m_Layer: 9
   m_Name: EnemyBat
   m_TagString: Enemy
@@ -112,6 +113,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   target: {fileID: 0}
+  IsNotMustRotate: 0
+--- !u!65 &8466117077666547510
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861968980446489157}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.25, y: 1.09, z: 0.15}
+  m_Center: {x: 0, y: 0.18, z: 0.15}
 --- !u!1001 &2150057531197999133
 PrefabInstance:
   m_ObjectHideFlags: 0

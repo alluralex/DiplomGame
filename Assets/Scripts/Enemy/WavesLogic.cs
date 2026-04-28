@@ -38,12 +38,9 @@ namespace Assets.Scripts
         {
 
             labelWaveMax.text = MaxWave.ToString();
-
             timerLabel.text = waveDuration.ToString();
-
             labelWave.text = currentWave.ToString();
-
-            StartWave();
+            currentTime = waveDuration;
         }
 
         private void Update()
@@ -111,6 +108,30 @@ namespace Assets.Scripts
         void SpawnFinalBoss()
         {
             Instantiate(FinalBoss, TransformBoss.position, transform.rotation);
+        }
+
+        public void SetWaveParameters(int maxWave, float duration)
+        {
+            MaxWave = maxWave;
+            waveDuration = duration;
+            labelWaveMax.text = MaxWave.ToString();
+            timerLabel.text = FormatTime(waveDuration);
+        }
+
+        public void StartGame()
+        {
+            currentWave = 0;
+            labelWave.text = currentWave.ToString();
+            currentTime = waveDuration;
+            enabled = true; 
+        }
+
+        private string FormatTime(float seconds)
+        {
+            int secs = Mathf.CeilToInt(seconds);
+            int minutes = secs / 60;
+            int remainingSecs = secs % 60;
+            return $"{minutes:00}:{remainingSecs:00}";
         }
     }
 }

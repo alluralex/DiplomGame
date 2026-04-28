@@ -10,11 +10,6 @@ public class HeroRotator : MonoBehaviour
 
     private Vector3 rawInputRotation;
 
-    private void Start()
-    {
-        CursosBlock();
-    }
-
     public void OnLook(InputAction.CallbackContext value)
     {
         Vector2 vector2 = value.ReadValue<Vector2>();

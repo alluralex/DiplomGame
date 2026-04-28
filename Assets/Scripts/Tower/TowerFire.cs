@@ -17,13 +17,20 @@ public class TowerFire : MonoBehaviour, ITakeDamage
     public Transform turretPart = null;
     public float rotationSpeed = 10f;
 
+    private float CurrentHealth; 
+
     protected List<Enemy> enemiesInRange = new List<Enemy>();
+
+    public bool IsAlive => throw new System.NotImplementedException();
 
     void Start()
     {
+        CurrentHealth = towerStats.health;
+
         SphereCollider col = GetComponent<SphereCollider>();
         col.radius = towerStats.range;
     }
+
 
     void Update()
     {
@@ -91,7 +98,6 @@ public class TowerFire : MonoBehaviour, ITakeDamage
 
     protected virtual void Attack(Enemy target)
     {
-        // мультишот, но его не видно
         for (int i = 0; i < towerStats.amountOfShots; i++)
         {
             GameObject projectileStartAttack = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
@@ -122,7 +128,7 @@ public class TowerFire : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(int damage)
     {
-        towerItem.health -= damage;
-        if (towerItem.health <= 0) Destroy(this);
+        CurrentHealth -= damage;
+        if (CurrentHealth <= 0) Destroy(gameObject);
     }
 }
