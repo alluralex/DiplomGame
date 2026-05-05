@@ -13,7 +13,6 @@ public class HeroMover : MonoBehaviour
     {
         if (rawInputMovement.x != 0 || rawInputMovement.z != 0)
         {
-
             transform.position += transform.TransformDirection(rawInputMovement) * _speed;
         }
     }

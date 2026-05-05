@@ -67,5 +67,12 @@ namespace Assets.Scripts.Inventory
         {
             return GetComponentsInChildren<Slot>();
         }
+
+        public bool HasItem(ItemData item)
+        {
+            foreach (Slot slot in items)
+                if (slot.item == item) return true;
+            return false;
+        }
     }
 }

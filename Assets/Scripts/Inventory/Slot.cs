@@ -38,6 +38,9 @@ public class Slot : MonoBehaviour,
             statisticItem.MoneyHero.text = item.sellPrice.ToString();
         }
 
+        if (statisticItem != null && statisticItem.gameObject.activeSelf)
+            statisticItem.Hide();
+
         GrabByMouse.Item = item;
         GrabByMouse.FromSlot = this;
 

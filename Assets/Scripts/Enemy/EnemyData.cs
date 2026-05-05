@@ -15,6 +15,9 @@ namespace Assets.Scripts.Enemy
         public float Health;
         public float Damage;
 
+        public float HealthPerWave = 0f;
+        public float DamagePerWave = 0f;
+
         public int MoneyDrop;
 
         public TypeAspect TypeEnemy;

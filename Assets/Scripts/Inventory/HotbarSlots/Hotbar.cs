@@ -2,6 +2,7 @@ using Assets.Scripts.Inventory;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hotbar : MonoBehaviour
 {
@@ -23,8 +24,14 @@ public class Hotbar : MonoBehaviour
 
     public void SelectSlot(int index)
     {
+        foreach (var slot in slotsPrefab)
+        {
+            Image img = slot.GetComponent<Image>();
+            if (img != null) img.color = Color.white;
+        }
+        Image selectedImg = slotsPrefab[index].GetComponent<Image>();
+        if (selectedImg != null) selectedImg.color = Color.red;
         activeIndex = index;
-        Debug.Log($"Выбран слот хотбара {index} (активный индекс = {activeIndex})");
     }
 
     public ItemData GetActiveItem()

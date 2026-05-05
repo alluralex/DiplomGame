@@ -47,14 +47,15 @@ namespace Assets.Scripts.Inventory
 
         public void SellItem(Hero heroMoney)
         {
-            if (CurrentItem == null || CurrentSlot == null)
+            if (CurrentItem == null || CurrentSlot == null) return;
+
+            if (GrabByMouse.Item == CurrentItem && GrabByMouse.FromSlot == CurrentSlot)
             {
-                Debug.Log("Нет выбранного предмета для продажи");
-                return;
+                GrabByMouse.Item = null;
+                GrabByMouse.FromSlot = null;
             }
 
             heroMoney.GetMoney(CurrentItem.sellPrice);
-
             CurrentSlot.item = null;
             CurrentSlot.UpdateVisual();
             CurrentSlot.onItemChanged?.Invoke();

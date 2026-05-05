@@ -11,18 +11,33 @@ public class Enemy : MonoBehaviour
     private Hero playerHero;
     private float currentHealth;
 
-   private float attackCooldown = 2f;
-   private int attackDamage = 10;
+    private float attackCooldown = 2f;
+    private int attackDamage = 10;
 
     private Coroutine attackCoroutine;
     private ITakeDamage currentTarget;
 
+    private int currentDamage;
+    private int currentWave;
+
+    public void ApplyWaveScaling(int waveNumber)
+    {
+        currentWave = waveNumber;
+        float extraHealth = enemyData.HealthPerWave * currentWave;
+        currentHealth = enemyData.MaxHealth + extraHealth;
+        currentDamage = (int)(enemyData.Damage + enemyData.DamagePerWave * currentWave);
+    }
 
     void Start()
     {
         playerHero = FindFirstObjectByType<Hero>();
-        if (enemyData != null)
-            currentHealth = enemyData.MaxHealth;
+        currentHealth = enemyData.MaxHealth;
+
+        var wave = FindFirstObjectByType<WavesLogic>();
+
+        wave.currentWave = currentWave;
+
+        ApplyWaveScaling(currentWave);
     }
 
     public void Init(EnemyData data)
@@ -100,7 +115,7 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            currentTarget.TakeDamage(attackDamage);
+            currentTarget.TakeDamage(currentDamage);
             yield return new WaitForSeconds(attackCooldown);
         }
     }

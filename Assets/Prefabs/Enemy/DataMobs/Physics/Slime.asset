@@ -16,6 +16,8 @@ MonoBehaviour:
   MaxHealth: 5
   Health: 5
   Damage: 5
+  HealthPerWave: 50
+  DamagePerWave: 0
   MoneyDrop: 5
   TypeEnemy: 2
   IsBoss: 0

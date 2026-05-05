@@ -19,7 +19,7 @@ namespace Assets.Scripts
         
         private float currentTime;
 
-        private int currentWave = 0;
+        public int currentWave = 0;
 
         private TypeAspect aspect;
 
@@ -46,9 +46,8 @@ namespace Assets.Scripts
         private void Update()
         {
             currentTime -= Time.deltaTime;
-            if (currentWave != MaxWave)
+            if (currentWave <= MaxWave)
             {
-
                 if (currentTime <= 0 && currentWave != MaxWave)
                 {
                     NextWave();

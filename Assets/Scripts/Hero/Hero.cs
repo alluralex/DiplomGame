@@ -12,8 +12,6 @@ using UnityEngine.InputSystem;
 
 public class Hero : MonoBehaviour
 {
-
-
     private Animator animator;
 
     [SerializeField] private int maxHealth = 3;

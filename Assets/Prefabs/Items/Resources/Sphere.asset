@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Sphere
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.ItemData
   ItemId: 101
-  Name: "\u0421\u0444\u0435\u0440\u0430"
+  Name: "\u0421\u0444\u0435\u0440\u0430 \u043C\u043E\u043B\u043D\u0438\u0438"
   Image: {fileID: 21300000, guid: d6c8148cf927db04aab0fcff60427483, type: 3}
   buyPrice: 0
   sellPrice: 30
+  health: 0
   Tower: {fileID: 0}
   artefactEffect: {fileID: 0}
   type: 0

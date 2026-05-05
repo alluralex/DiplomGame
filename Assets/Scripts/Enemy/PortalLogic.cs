@@ -15,17 +15,20 @@ public class PortalLogic : MonoBehaviour
 
     private TypeAspect waveAspect;
 
+    private int currentWaveNumber;
+
     private void SpawnWave(int waveNumber)
     {
+        currentWaveNumber = waveNumber;
         waveAspect = GetRandomAspect();
-        int baseCount = 3; 
+        int baseCount = 3;
         int additional = waveNumber / 2;
         int mobCount = baseCount + additional;
         for (int i = 0; i < mobCount; i++)
-        {
             SpawnSingleMob();
-        }
     }
+
+
 
     private void SpawnSingleMob()
     {
@@ -56,7 +59,10 @@ public class PortalLogic : MonoBehaviour
                            transform.forward * forwardOffset +
                            transform.right * sideOffset;
 
-        Instantiate(prefab, spawnPos, transform.rotation);
+        GameObject newMob = Instantiate(prefab, spawnPos, transform.rotation);
+        Enemy enemy = newMob.GetComponent<Enemy>();
+        if (enemy != null)
+            enemy.ApplyWaveScaling(currentWaveNumber);
     }
 
     private TypeAspect GetRandomAspect()
