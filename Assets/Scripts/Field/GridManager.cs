@@ -1,4 +1,5 @@
 using Assets.Scripts.Field;
+using Assets.Scripts.PlayerSettings;
 using Assets.Scripts.UI.GameEnd;
 using UnityEngine;
 
@@ -111,6 +112,8 @@ public class GridManager : MonoBehaviour
 
         hero.SpendMoney(cellCost);
         StatisticAfterGame.TerritoryBuy++;
+        Statistic.FieldBuy++;
+        Statistic.Save();
         cellCost += moneyadd;
         gridUI.CostZone.text = cellCost.ToString();
         cell.State = CellState.Purchased;

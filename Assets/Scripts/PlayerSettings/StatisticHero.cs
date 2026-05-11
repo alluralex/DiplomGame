@@ -8,4 +8,10 @@ public class StatisticHero
     public int TotalAttempts;
     public int CompletedAttempts;
     public int MoneyEarned;
+    public int ArtefactsBuy;
+    public int FieldBuy;
+    public int HealthGetCar;
+    public int CompletedCrafts;
+
+    public bool TutorialCompleted = false;
 }

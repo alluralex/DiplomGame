@@ -1,6 +1,7 @@
 using Assets.Scripts;
 using Assets.Scripts.Inventory;
 using Assets.Scripts.Inventory.Upgrade;
+using Assets.Scripts.PlayerSettings;
 using Assets.Scripts.UI.GameEnd;
 using System;
 using System.Collections;
@@ -29,6 +30,9 @@ public class Hero : MonoBehaviour
     public UpgradeInfo upgradeInfo;
 
     public List<ArtefactEffect> Artefacts = new List<ArtefactEffect>();
+
+    public event Action OnUpgradeInfoChanged;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Item"))
@@ -64,11 +68,19 @@ public class Hero : MonoBehaviour
             }
         }
     }
+
+    public void InvokeUpgradeInfoChanged()
+    {
+        OnUpgradeInfoChanged?.Invoke();
+    }
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
 
         health = maxHealth;
+
+        Settings.Load();
+        Statistic.Load();
 
     }
 
@@ -76,6 +88,8 @@ public class Hero : MonoBehaviour
     {
         moneyHero += moneySpend;
         StatisticAfterGame.MoneyEarned += moneySpend;
+        Statistic.MoneyEarned += moneySpend;
+        Statistic.Save();
         OnMoneyChanged(moneyHero);
     }
 

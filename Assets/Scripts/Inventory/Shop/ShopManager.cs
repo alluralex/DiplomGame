@@ -2,6 +2,7 @@ using Assets.Scripts;
 using Assets.Scripts.Inventory;
 using Assets.Scripts.Inventory.Bake;
 using Assets.Scripts.Inventory.Shop;
+using Assets.Scripts.PlayerSettings;
 using Assets.Scripts.UI.GameEnd;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private List<Slot> slotsOfArtefacts;
 
     [SerializeField] private List<ItemData> allArtefacts;
+    private Hero heroThis;
+
     public void RefreshShop()
     {
         var available = new List<ItemData>(allArtefacts);
@@ -37,6 +40,8 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         RefreshShop();
+        Hero hero = FindFirstObjectByType<Hero>();
+        heroThis = hero;
     }
 
     public void TakeResult(Inventory inventory, Slot slot, ItemType typeItem, Hero hero)
@@ -57,6 +62,9 @@ public class ShopManager : MonoBehaviour
                     slot.item.artefactEffect.Apply(hero);
                     Debug.Log($"Куплен артефакт {slot.item.Name}, эффект применён");
                     StatisticAfterGame.ArtefactsBuy++;
+                    Statistic.ArtefactsBuy++;
+                    Statistic.Save();
+                    hero.InvokeUpgradeInfoChanged();
                     RefreshShop(); 
                 }
                 else
@@ -64,6 +72,7 @@ public class ShopManager : MonoBehaviour
                     Debug.LogWarning($"Артефакт {slot.item.Name} не имеет эффекта!");
                 }
                 break;
+
         }
     }
 }

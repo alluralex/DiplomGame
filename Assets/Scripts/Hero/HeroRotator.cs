@@ -1,3 +1,4 @@
+using Assets.Scripts.PlayerSettings;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,16 @@ using UnityEngine.UIElements;
 
 public class HeroRotator : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] public float _speed;
 
     private Vector3 rawInputRotation;
+
+    private void Start()
+    {
+        Settings.Load();
+
+        _speed = Settings.MouseGetting;
+    }
 
     public void OnLook(InputAction.CallbackContext value)
     {
@@ -18,7 +26,7 @@ public class HeroRotator : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(rawInputRotation * _speed * Time.deltaTime);
+        transform.Rotate(rawInputRotation * _speed * 60 * Time.deltaTime);
     }
 
     public void CursosBlock()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.PlayerSettings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,6 +65,8 @@ namespace Assets.Scripts.UI.Waves
             wavesLogic.SetWaveParameters(selectedMaxWave, selectedWaveDuration);
             wavesLogic.StartGame();
 
+            Statistic.TotalAttempts++;
+            Statistic.Save();
 
 
             gameObject.SetActive(false);

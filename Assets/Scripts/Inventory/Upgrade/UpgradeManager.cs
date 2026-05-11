@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.PlayerSettings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,13 @@ namespace Assets.Scripts.Inventory.Upgrade
         [SerializeField] private DriveBox Car;
         [SerializeField] private UpgradeInfo upgradeInfo;
 
-        
+        private Hero heroThis;
+
+        public void Start()
+        {
+            Hero hero = FindFirstObjectByType<Hero>();
+            heroThis = hero;
+        }
 
         public void UpgradeCar()
         {
@@ -26,6 +33,8 @@ namespace Assets.Scripts.Inventory.Upgrade
                 {
                     case 4:
                         Car.AddHealth(5);
+                        Statistic.HealthGetCar++;
+                        Statistic.Save();
                         Debug.Log($"{Car.CurrentHealth}");
                         break;
                     case 6: 
@@ -38,7 +47,7 @@ namespace Assets.Scripts.Inventory.Upgrade
                 }
             slotUpgrade.item = null;
             slotUpgrade.UpdateVisual();
-
+            heroThis.InvokeUpgradeInfoChanged();
 
         }
 

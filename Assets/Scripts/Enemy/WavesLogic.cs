@@ -1,42 +1,31 @@
 ﻿using Assets.Scripts.Enemy;
 using Assets.Scripts.Field;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-
 
 namespace Assets.Scripts
 {
     public class WavesLogic : MonoBehaviour
     {
-        public float waveDuration = 150f; // длительность волны (сек)
+        public float waveDuration = 150f;
+        public int MaxWave = 5;
 
-        public int MaxWave = 5; // максимальное количество ходов
-        
         private float currentTime;
-
-        public int currentWave = 0;
-
+        private int currentWave = 0;
         private TypeAspect aspect;
+        private bool bossSpawned;
 
-        [SerializeField]private TextMeshProUGUI timerLabel;
-
-        [SerializeField]private TextMeshProUGUI labelWave;
-
-        [SerializeField]private TextMeshProUGUI labelWaveMax;
-
+        [SerializeField] private TextMeshProUGUI timerLabel;
+        [SerializeField] private TextMeshProUGUI labelWave;
+        [SerializeField] private TextMeshProUGUI labelWaveMax;
         [SerializeField] private GameObject FinalBoss;
         [SerializeField] private Transform TransformBoss;
 
-        private bool bossSpawned;
+        public int CurrentWave => currentWave;
 
         private void Start()
         {
-
             labelWaveMax.text = MaxWave.ToString();
             timerLabel.text = waveDuration.ToString();
             labelWave.text = currentWave.ToString();
@@ -46,16 +35,15 @@ namespace Assets.Scripts
         private void Update()
         {
             currentTime -= Time.deltaTime;
-            if (currentWave <= MaxWave)
+            if (currentWave != MaxWave)
             {
                 if (currentTime <= 0 && currentWave != MaxWave)
                 {
                     NextWave();
                 }
-
                 UpdateUI();
             }
-            else 
+            else
             {
                 timerLabel.text = "убей босса!";
                 if (!bossSpawned)
@@ -65,19 +53,16 @@ namespace Assets.Scripts
                     bossSpawned = true;
                 }
             }
-
         }
 
-        void StartWave()
+        private void StartWave()
         {
             currentTime = waveDuration;
-
             GlobalEvents.unityEvent.Invoke(currentWave);
         }
 
-        void NextWave()
+        private void NextWave()
         {
-
             int randomIndex = UnityEngine.Random.Range(0, 3);
             aspect = randomIndex switch
             {
@@ -94,17 +79,15 @@ namespace Assets.Scripts
             StartWave();
         }
 
-        void UpdateUI()
+        private void UpdateUI()
         {
             int seconds = Mathf.CeilToInt(currentTime);
-
             int minutes = seconds / 60;
             int secs = seconds % 60;
-
             timerLabel.text = $"{minutes:00}:{secs:00}";
         }
 
-        void SpawnFinalBoss()
+        private void SpawnFinalBoss()
         {
             Instantiate(FinalBoss, TransformBoss.position, transform.rotation);
         }
@@ -122,7 +105,7 @@ namespace Assets.Scripts
             currentWave = 0;
             labelWave.text = currentWave.ToString();
             currentTime = waveDuration;
-            enabled = true; 
+            enabled = true;
         }
 
         private string FormatTime(float seconds)

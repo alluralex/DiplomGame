@@ -1,5 +1,6 @@
 using Assets.Scripts;
 using Assets.Scripts.Enemy;
+using Assets.Scripts.PlayerSettings;
 using Assets.Scripts.UI.GameEnd;
 using System.Collections;
 using UnityEngine;
@@ -31,13 +32,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         playerHero = FindFirstObjectByType<Hero>();
-        currentHealth = enemyData.MaxHealth;
-
-        var wave = FindFirstObjectByType<WavesLogic>();
-
-        wave.currentWave = currentWave;
-
-        ApplyWaveScaling(currentWave);
     }
 
     public void Init(EnemyData data)
@@ -80,11 +74,16 @@ public class Enemy : MonoBehaviour
         if (enemyData.IsBoss == true)
         {
             GlobalEvents.OnBossDefeated?.Invoke();
+            Statistic.CompletedAttempts++;
+            Statistic.Save();
         }
 
         int money = enemyData.MoneyDrop + (playerHero.upgradeInfo?.MoneyAdd ?? 0);
         playerHero.GetMoney(money);
         StatisticAfterGame.EnemiesKilled++;
+        Statistic.EnemiesDied++;
+        Statistic.MoneyEarned += enemyData.MoneyDrop;
+        Statistic.Save();
         Destroy(gameObject);
     }
 
