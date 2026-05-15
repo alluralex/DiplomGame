@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Mouse
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Enemy.EnemyData
   ID: 10
-  MaxHealth: 5
-  Health: 5
-  Damage: 5
-  HealthPerWave: 5
-  DamagePerWave: 5
+  MaxHealth: 16
+  Health: 16
+  Damage: 30
+  HealthPerWave: 6
+  DamagePerWave: 8
   MoneyDrop: 5
   TypeEnemy: 2
   IsBoss: 0

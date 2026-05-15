@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfe893007e19ed4881fa441f3f89816, type: 3}
+  m_Name: TowerLightingCrossbowData
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Inventory.ItemData
+  ItemId: 1006
+  Name: "\u0411\u0430\u0448\u043D\u044F \u044D\u043B\u0435\u043A\u0442\u0440\u0438\u0447\u0435\u0441\u043A\u0438\u0445
+    \u043B\u0435\u0437\u0432\u0438\u0439"
+  Image: {fileID: 21300000, guid: 62439c04dc8662d489cc4993c27fead7, type: 3}
+  buyPrice: 0
+  sellPrice: 150
+  health: 30
+  Tower: {fileID: 2344339302986582534, guid: d926dcf68daf75f448017167b5a2aafc, type: 3}
+  artefactEffect: {fileID: 0}
+  type: 1

@@ -13,12 +13,6 @@ using UnityEngine.InputSystem;
 
 public class Hero : MonoBehaviour
 {
-    private Animator animator;
-
-    [SerializeField] private int maxHealth = 3;
-
-    private int health;
-
     public int moneyHero;
 
     public Inventory inventory;
@@ -75,10 +69,6 @@ public class Hero : MonoBehaviour
     }
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
-
-        health = maxHealth;
-
         Settings.Load();
         Statistic.Load();
 

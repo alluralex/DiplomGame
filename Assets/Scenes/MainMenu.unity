@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 55622220}
   - component: {fileID: 55622219}
   - component: {fileID: 55622223}
+  - component: {fileID: 55622224}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -605,6 +606,19 @@ MonoBehaviour:
   Menu: {fileID: 2108602388}
   MenuCanvas: {fileID: 55622221}
   TutorialMenu: {fileID: 160600785}
+--- !u!114 &55622224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55622218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b06c73a4a99af4ba0d1a971e022813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickPlaySound
+  clickOn: {fileID: 245543948}
 --- !u!1 &63188022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9615a7bee01972745b20f1bdbecdb067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.UI.Tutorial.TutorialIsCompleted
-  sceneTutorial: 
+  sceneTutorial: Tutorial
   sceneGame: Game
 --- !u!114 &160600788
 MonoBehaviour:
@@ -1287,6 +1301,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160600785}
   m_CullTransparentMesh: 1
+--- !u!82 &245543948 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8522167160735747581, guid: 4e2e9492de316d14297c2caf1ac5a911,
+    type: 3}
+  m_PrefabInstance: {fileID: 8737485875058999425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &254152340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1469,18 @@ MonoBehaviour:
       - m_Target: {fileID: 55622223}
         m_TargetAssemblyTypeName: Assets.Scripts.UI.EscMenu.MenuClicks, Assembly-CSharp
         m_MethodName: CloseStatistic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1791,9 +1823,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 55622223}
-        m_TargetAssemblyTypeName: Assets.Scripts.UI.EscMenu.MenuClicks, Assembly-CSharp
-        m_MethodName: GoToTheScene
+      - m_Target: {fileID: 160600787}
+        m_TargetAssemblyTypeName: Assets.Scripts.UI.Tutorial.TutorialIsCompleted,
+          Assembly-CSharp
+        m_MethodName: GoToTheTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1928,6 +1973,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Assets.Scripts.UI.Tutorial.TutorialIsCompleted,
           Assembly-CSharp
         m_MethodName: CloseThisWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3247,6 +3304,18 @@ MonoBehaviour:
       - m_Target: {fileID: 55622223}
         m_TargetAssemblyTypeName: Assets.Scripts.UI.EscMenu.MenuClicks, Assembly-CSharp
         m_MethodName: CloseSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4829,9 +4898,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ba82721b27efa4185e2d063a52cbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.PlayerSettings.OptionUI
-  MasterVolumeSlider: {fileID: 1468608653}
-  MusicVolumeSlider: {fileID: 1292002754}
-  SoundVolumeSlider: {fileID: 2049820828}
+  MusicVolumeSlider: {fileID: 2049820828}
+  SoundVolumeSlider: {fileID: 1292002754}
   MousePowerSlider: {fileID: 0}
   HeroRotator: {fileID: 0}
 --- !u!1 &1212721391
@@ -4996,6 +5064,18 @@ MonoBehaviour:
       - m_Target: {fileID: 55622223}
         m_TargetAssemblyTypeName: Assets.Scripts.UI.EscMenu.MenuClicks, Assembly-CSharp
         m_MethodName: OpenStatistic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5268,6 +5348,18 @@ MonoBehaviour:
       - m_Target: {fileID: 55622223}
         m_TargetAssemblyTypeName: Assets.Scripts.UI.EscMenu.MenuClicks, Assembly-CSharp
         m_MethodName: OpenSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6083,6 +6175,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Assets.Scripts.UI.Tutorial.TutorialIsCompleted,
           Assembly-CSharp
         m_MethodName: GoToTheTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9114,6 +9218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1682716090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10297,6 +10413,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2035675104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10563,6 +10691,7 @@ GameObject:
   - component: {fileID: 2056484210}
   - component: {fileID: 2056484209}
   - component: {fileID: 2056484208}
+  - component: {fileID: 2056484211}
   m_Layer: 5
   m_Name: NoTutorial
   m_TagString: Untagged
@@ -10647,6 +10776,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 55622224}
+        m_TargetAssemblyTypeName: ClickPlaySound, Assembly-CSharp
+        m_MethodName: ClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2056484211}
+        m_TargetAssemblyTypeName: EndTutorial, Assembly-CSharp
+        m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2056484209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10685,6 +10838,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056484206}
   m_CullTransparentMesh: 1
+--- !u!114 &2056484211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056484206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e84d7a8c3f39dde439fa751e55b089e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndTutorial
 --- !u!1 &2057569227
 GameObject:
   m_ObjectHideFlags: 0
@@ -11359,6 +11524,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138759135}
   m_CullTransparentMesh: 1
+--- !u!1001 &8737485875058999425
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6413732331972396701, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_Name
+      value: AllSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1044.9658
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 525.3853
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230851207330223710, guid: 4e2e9492de316d14297c2caf1ac5a911,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e2e9492de316d14297c2caf1ac5a911, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -11367,3 +11600,4 @@ SceneRoots:
   - {fileID: 1287678010}
   - {fileID: 55622222}
   - {fileID: 952614195}
+  - {fileID: 8737485875058999425}

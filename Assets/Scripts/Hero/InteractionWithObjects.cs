@@ -30,8 +30,8 @@ public class InteractionWithObjects : MonoBehaviour
 
             Ray ray = new Ray(transform.position, transform.forward);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, 1, 1) == true)
-            {
+            if (Physics.Raycast(ray, out RaycastHit hit, 1, 1, QueryTriggerInteraction.Ignore) && Time.timeScale == 1f)
+                {
                 if (hit.collider.CompareTag("StoneTag") || hit.collider.CompareTag("TreeTag") || hit.collider.CompareTag("IronTag") || hit.collider.CompareTag("CrystalTag"))
                 {
                     objectGame = hit.collider.GetComponent<ObjectGame>();

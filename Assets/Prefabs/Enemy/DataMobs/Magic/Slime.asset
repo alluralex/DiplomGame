@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Enemy.EnemyData
   ID: 10
-  MaxHealth: 5
-  Health: 5
-  Damage: 5
-  HealthPerWave: 5
-  DamagePerWave: 5
+  MaxHealth: 18
+  Health: 18
+  Damage: 25
+  HealthPerWave: 8
+  DamagePerWave: 6
   MoneyDrop: 5
   TypeEnemy: 1
   IsBoss: 0

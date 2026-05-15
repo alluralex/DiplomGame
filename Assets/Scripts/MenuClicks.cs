@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.UI.EscMenu
@@ -25,11 +26,14 @@ namespace Assets.Scripts.UI.EscMenu
         [SerializeField] private Canvas MenuCanvas;
 
         [SerializeField] private GameObject TutorialMenu;
+
         public void ReturnToGame()
         {
             MenuCanvas.enabled = false;
+            Time.timeScale = 1.0f;
         }
 
+       
         public void OpenSettings()
         {
             Settings.SetActive(true);

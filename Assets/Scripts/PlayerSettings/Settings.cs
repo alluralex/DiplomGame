@@ -10,6 +10,8 @@ namespace Assets.Scripts.PlayerSettings
     {
         private static SettingsPlayer data = new SettingsPlayer();
 
+        public static event Action<float> OnMusicVolumeChanged;
+
         public static float MouseGetting
         {
             get => data.MouseGetting;
@@ -18,17 +20,17 @@ namespace Assets.Scripts.PlayerSettings
         public static float MusicValue
         {
             get => data.MusicValue;
-            set => data.MusicValue = value;
+            set
+            {
+                data.MusicValue = value;
+                OnMusicVolumeChanged?.Invoke(value);
+                Save();
+            }
         }
         public static float SoundValue
         {
             get => data.SoundValue;
             set => data.SoundValue = value;
-        }
-        public static float MasterValue
-        {
-            get => data.MasterValue;
-            set => data.MasterValue = value;
         }
 
         public static void Save()

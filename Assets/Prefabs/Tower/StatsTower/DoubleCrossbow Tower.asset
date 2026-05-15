@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69ece8a0a7247d94689a9614fb9bdc31, type: 3}
-  m_Name: GhostTower
+  m_Name: DoubleCrossbow Tower
   m_EditorClassIdentifier: Assembly-CSharp::TowerStats
-  id: 10005
-  health: 99999
-  damage: 5
-  range: 3
-  fireRate: 0.25
-  Title: "\u041F\u0440\u0438\u0437\u0440\u0430\u043A \u0431\u0430\u0448\u043D\u044F"
-  amountOfShots: 1
-  typeTower: 1
+  id: 7
+  health: 20
+  damage: 10
+  range: 15
+  fireRate: 1
+  Title: "\u0414\u0432\u043E\u0439\u043D\u0430\u044F \u0431\u0430\u0448\u043D\u044F
+    \u0430\u0440\u0431\u0430\u043B\u0435\u0442\u0447\u0438\u043A\u0430"
+  amountOfShots: 0
+  typeTower: 2

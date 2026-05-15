@@ -89,6 +89,7 @@ MonoBehaviour:
     type: 3}
   dropAmount: 1
   currentHits: 0
+  towerItem: {fileID: 0}
 --- !u!1 &7343931849478701932
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +168,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ee77f2758dcc0514ca94caad81c83910, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

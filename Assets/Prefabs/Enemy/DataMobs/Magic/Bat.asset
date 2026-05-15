@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Enemy.EnemyData
   ID: 10
-  MaxHealth: 5
-  Health: 5
-  Damage: 5
-  HealthPerWave: 5
+  MaxHealth: 14
+  Health: 14
+  Damage: 35
+  HealthPerWave: 4
   DamagePerWave: 5
   MoneyDrop: 5
   TypeEnemy: 1

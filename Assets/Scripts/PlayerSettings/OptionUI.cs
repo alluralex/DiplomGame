@@ -11,7 +11,6 @@ namespace Assets.Scripts.PlayerSettings
 {
     public class OptionUI : MonoBehaviour
     {
-        [SerializeField] private Slider MasterVolumeSlider;
         [SerializeField] private Slider MusicVolumeSlider;
         [SerializeField] private Slider SoundVolumeSlider;
         [SerializeField] private Slider? MousePowerSlider;
@@ -23,23 +22,15 @@ namespace Assets.Scripts.PlayerSettings
             Settings.Load();
 
 
-            MasterVolumeSlider.value = Settings.MasterValue;
             MusicVolumeSlider.value = Settings.MusicValue;
             SoundVolumeSlider.value = Settings.SoundValue;
             MousePowerSlider.value = Settings.MouseGetting;
 
             HeroRotator._speed = Settings.MouseGetting;
 
-            MasterVolumeSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
             MusicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
             SoundVolumeSlider.onValueChanged.AddListener(OnSoundVolumeChanged);
             MousePowerSlider.onValueChanged.AddListener(OnMousePowerChanged);
-        }
-
-        public void OnMasterVolumeChanged(float value)
-        {
-            Settings.MasterValue = value;
-            Settings.Save();
         }
 
         public void OnMusicVolumeChanged(float value)
