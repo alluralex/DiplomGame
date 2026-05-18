@@ -20,7 +20,7 @@ public class InteractionWithObjects : MonoBehaviour
     {
         if (button.performed)
         {
-            if (isInCar) 
+            if (isInCar && Time.timeScale == 1f) 
             {
                 ExitCar();
                 return;

@@ -7,10 +7,10 @@ public class EnemyMove : MonoBehaviour
     public GameObject target;
 
     public bool IsNotMustRotate;
+    public float speed = 0.5f;
 
     private Rigidbody rb;
     private Vector3 movement;
-    private float speed = 0.5f;
     private float rotationSpeed = 20f;
 
     void Start()
@@ -35,10 +35,10 @@ public class EnemyMove : MonoBehaviour
         if (IsNotMustRotate == false)
         {
 
-        Vector3 direction = target.transform.position - transform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
+            Vector3 direction = target.transform.position - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
     private void MoveChar(Vector3 direction)

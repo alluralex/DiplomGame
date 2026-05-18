@@ -21,4 +21,5 @@ MonoBehaviour:
   health: 30
   Tower: {fileID: 4528740032804075037, guid: a63ae3013df14074891e72a651bf2982, type: 3}
   artefactEffect: {fileID: 0}
+  TowerStats: {fileID: 11400000, guid: c2f6a224809f02844b3840f3ca495d5f, type: 2}
   type: 1

@@ -9,8 +9,14 @@ public class Billboard : MonoBehaviour
 
 	private void Start()
 	{
-		_mainCamera = Camera.main;
-	}
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            _mainCamera = player.GetComponentInChildren<Camera>();
+        }
+        if (_mainCamera == null)
+            _mainCamera = Camera.main;
+    }
 
 	private void LateUpdate()
 	{

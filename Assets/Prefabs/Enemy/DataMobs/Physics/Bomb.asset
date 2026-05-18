@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bomb
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Enemy.EnemyData
   ID: 10
-  MaxHealth: 30
-  Health: 30
+  MaxHealth: 300
+  Health: 300
   Damage: 20
   HealthPerWave: 10
   DamagePerWave: 10

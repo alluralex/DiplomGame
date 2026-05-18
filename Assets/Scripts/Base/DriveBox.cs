@@ -30,7 +30,7 @@ public class DriveBox : MonoBehaviour, ITakeDamage
 
     float HorizontalInput, VerticalInput;
 
-    public bool IsAlive => throw new System.NotImplementedException();
+    public bool IsAlive => throw new NotImplementedException();
 
     public void TryGoCar(Hero player)
     {
@@ -62,6 +62,14 @@ public class DriveBox : MonoBehaviour, ITakeDamage
 
             RightFrontWheel.steerAngle = _speedRotate * HorizontalInput;
             LeftFrontWheel.steerAngle = _speedRotate * HorizontalInput;
+        }
+        else
+        {
+
+            LeftBackWheel.motorTorque = 0;
+            RightBackWheel.motorTorque = 0;
+            RightFrontWheel.motorTorque = 0;
+            LeftFrontWheel.motorTorque = 0;
         }
     }
     public void RemoveDriver()

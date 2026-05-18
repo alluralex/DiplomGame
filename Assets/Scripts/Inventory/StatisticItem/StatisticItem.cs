@@ -18,6 +18,13 @@ namespace Assets.Scripts.Inventory
         private ItemData CurrentItem;
         private Slot CurrentSlot;
 
+        [SerializeField] private GameObject TowerStatsObj;
+
+        [SerializeField] private TextMeshProUGUI Damage;
+        [SerializeField] private TextMeshProUGUI HP;
+        [SerializeField] private TextMeshProUGUI Range;
+        [SerializeField] private TextMeshProUGUI Speed;
+
         private void Start()
         {
             gameObject.SetActive(false);
@@ -29,6 +36,18 @@ namespace Assets.Scripts.Inventory
             {
                 Hide();
                 return;
+            }
+            if (item.type == ItemType.Tower && item.TowerStats != null)
+            {
+                TowerStatsObj.SetActive(true);
+                Damage.text = item.TowerStats.damage.ToString();
+                HP.text = item.TowerStats.health.ToString();
+                Range.text = item.TowerStats.range.ToString();
+                Speed.text = item.TowerStats.fireRate.ToString();
+            }
+            else
+            {
+                TowerStatsObj.SetActive(false);
             }
             CurrentItem = item;
             CurrentSlot = slot;

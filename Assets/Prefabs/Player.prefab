@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 8955128063952299994}
   - component: {fileID: 8934341447342684867}
   - component: {fileID: 749727980324412353}
-  - component: {fileID: 3154314527113328896}
-  - component: {fileID: 6637817707558320933}
   - component: {fileID: 1490082896694747512}
   - component: {fileID: 2508053642054724543}
   m_Layer: 10
@@ -118,7 +116,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Use[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6637817707558320933}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InventoryMenu, Assembly-CSharp
         m_MethodName: OpenInventoryMenu
         m_Mode: 0
@@ -158,6 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0.05
+  Stats: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &8955128063952299994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,35 +212,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!111 &3154314527113328896
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408290424110392627}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
---- !u!114 &6637817707558320933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408290424110392627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c25f1259b1d46be4e9cde5850dd6a311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryMenu
-  UIDocument: {fileID: 0}
 --- !u!114 &1490082896694747512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7258307eb615e41853bb14d2504c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiController: {fileID: 0}
+  moneyHero: 0
+  inventory: {fileID: 0}
+  GridManager: {fileID: 0}
+  upgradeInfo: {fileID: 0}
+  Artefacts: []
 --- !u!136 &2508053642054724543
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -340,7 +315,6 @@ GameObject:
   m_Component:
   - component: {fileID: 145401266934223938}
   - component: {fileID: 5016345555897430286}
-  - component: {fileID: 3985487196209674834}
   - component: {fileID: 205332400926967215}
   m_Layer: 10
   m_Name: Square
@@ -423,28 +397,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3985487196209674834
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6440628139808842554}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c14e0c2e068c8cf47a018c85f1b07a6c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &205332400926967215
 MonoBehaviour:
   m_ObjectHideFlags: 0

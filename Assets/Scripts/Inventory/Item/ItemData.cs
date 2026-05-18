@@ -20,6 +20,7 @@ namespace Assets.Scripts.Inventory
 
         public GameObject Tower;
         public ArtefactEffect artefactEffect;
+        public TowerStats? TowerStats;
 
         public ItemType type;
     }

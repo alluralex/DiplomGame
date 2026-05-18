@@ -12,12 +12,16 @@ public class HeroMover : MonoBehaviour
     private Vector3 rawInputMovement;
 
     [SerializeField] private UpgradeInfo Stats;
+
+    [SerializeField] private Animator animator;
     private void FixedUpdate()
     {
         if (rawInputMovement.x != 0 || rawInputMovement.z != 0)
         {
             transform.position += transform.TransformDirection(rawInputMovement) * _speed * Stats.speedMultiplayer;
         }
+        animator.SetFloat("MoveX", rawInputMovement.x);
+        animator.SetFloat("MoveY", rawInputMovement.z);
     }
 
     public void OnMove(InputAction.CallbackContext value)

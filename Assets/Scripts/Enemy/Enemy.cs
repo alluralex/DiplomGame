@@ -2,18 +2,22 @@ using Assets.Scripts;
 using Assets.Scripts.Enemy;
 using Assets.Scripts.PlayerSettings;
 using Assets.Scripts.UI.GameEnd;
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyData enemyData;
+    [SerializeField] private Image healthBarFill;
 
     private Hero playerHero;
     private float currentHealth;
 
     private float attackCooldown = 2f;
     private int attackDamage = 10;
+
 
     private Coroutine attackCoroutine;
     private ITakeDamage currentTarget;
@@ -32,6 +36,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         playerHero = FindFirstObjectByType<Hero>();
+        currentHealth = enemyData.MaxHealth;
+        UpdateHealthBar();
     }
 
     public void Init(EnemyData data)
@@ -66,7 +72,13 @@ public class Enemy : MonoBehaviour
         currentHealth -= finalDamage;
         Debug.Log($"Урон: {finalDamage}, ХП осталось: {currentHealth}");
 
+        UpdateHealthBar();
         if (currentHealth <= 0) Die();
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBarFill.fillAmount = currentHealth / enemyData.MaxHealth;
     }
 
     public void Die()
