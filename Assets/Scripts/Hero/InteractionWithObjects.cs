@@ -12,6 +12,8 @@ public class InteractionWithObjects : MonoBehaviour
 
     [SerializeField] private DriveBox drivebox;
 
+    [SerializeField] private Animator animator;
+
     private DriveBox currentCar;
 
     private bool isInCar = false;
@@ -57,6 +59,8 @@ public class InteractionWithObjects : MonoBehaviour
                     hero.GetComponent<Rigidbody>().isKinematic = true;
                     hero.GetComponent<Collider>().enabled = false;
 
+                    animator.SetFloat("MoveX", 0);
+                    animator.SetFloat("MoveY", 0);
                     isInCar = true;
 
                 }

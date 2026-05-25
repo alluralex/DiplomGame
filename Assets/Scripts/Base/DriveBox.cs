@@ -1,4 +1,5 @@
 using Assets.Scripts;
+using Assets.Scripts.Sounds;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,7 @@ public class DriveBox : MonoBehaviour, ITakeDamage
     {
         CurrentHealth -= damage;
         OnHealthCnanged.Invoke(CurrentHealth);
+        SoundManager.Instance.PlaySound(SoundManager.Instance.BaseTakeDamage);
         if (CurrentHealth <= 0)
         {
             Destroy(this);

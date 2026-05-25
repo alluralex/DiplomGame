@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 749727980324412353}
   - component: {fileID: 1490082896694747512}
   - component: {fileID: 2508053642054724543}
+  - component: {fileID: 7449033755203688823}
+  - component: {fileID: 9065340847269039902}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -116,9 +118,10 @@ MonoBehaviour:
     m_ActionName: 'Player/Use[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InventoryMenu, Assembly-CSharp
-        m_MethodName: OpenInventoryMenu
+      - m_Target: {fileID: 7449033755203688823}
+        m_TargetAssemblyTypeName: Assets.Scripts.UI.InventoryUI.InventoryUILogic,
+          Assembly-CSharp
+        m_MethodName: OpenClose
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -138,6 +141,103 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3e9af82d-358e-46c7-b1b3-5f0d28c452fd
     m_ActionName: 'UI/InventoryTabLeft[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7449033755203688823}
+        m_TargetAssemblyTypeName: Assets.Scripts.UI.InventoryUI.InventoryUILogic,
+          Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 06d050ea-771e-48ae-86e7-635c611e00dd
+    m_ActionName: 'UI/OpenMenu[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9065340847269039902}
+        m_TargetAssemblyTypeName: TowerPlacer, Assembly-CSharp
+        m_MethodName: OnPlaceTower
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dbe2cb1c-e7c2-4162-8e1c-2022f30ee98a
+    m_ActionName: 'Player/PlaceTower[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Hotbar, Assembly-CSharp
+        m_MethodName: SelectSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5633ec52-e8e6-4e4d-b773-f9262a29c0cb
+    m_ActionName: 'Hotbar/1HotBar[/Keyboard/1]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Hotbar, Assembly-CSharp
+        m_MethodName: SelectSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 10e637ce-30f9-499d-bdea-77e5f837ed13
+    m_ActionName: 'Hotbar/2HotBar[/Keyboard/2]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Hotbar, Assembly-CSharp
+        m_MethodName: SelectSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 636f02ce-ebff-4ed5-81b3-a5d1b41e7da2
+    m_ActionName: 'Hotbar/3HotBar[/Keyboard/3]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Hotbar, Assembly-CSharp
+        m_MethodName: SelectSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cf7f5fae-8669-48e3-86b6-f5042a0239da
+    m_ActionName: 'Hotbar/4HotBar[/Keyboard/4]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -157,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0.05
   Stats: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 905213750362178331}
 --- !u!114 &8955128063952299994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionWithObjects
   hero: {fileID: 1490082896694747512}
   drivebox: {fileID: 0}
+  animator: {fileID: 905213750362178331}
 --- !u!54 &749727980324412353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -252,6 +353,43 @@ CapsuleCollider:
   m_Height: 0.6
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7449033755203688823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408290424110392627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06851b6eefb7648409c949bf16e6cad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.UI.InventoryUI.InventoryUILogic
+  UICanvas: {fileID: 0}
+  InventoryCanvas: {fileID: 0}
+  EscapeCanvas: {fileID: 0}
+  heroRotator: {fileID: 8955128063952299994}
+  InventoryButton: {fileID: 0}
+  CraftButton: {fileID: 0}
+  BakeButton: {fileID: 0}
+  UpgradeButton: {fileID: 0}
+  CompassButton: {fileID: 0}
+  ShopButton: {fileID: 0}
+--- !u!114 &9065340847269039902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408290424110392627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab91af546bf917449b768117ed60b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerPlacer
+  hotbar: {fileID: 0}
+  playerTransform: {fileID: 1481755316843012988}
+  placeDistance: 0.66
 --- !u!1 &5289116034281597185
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +454,7 @@ GameObject:
   - component: {fileID: 145401266934223938}
   - component: {fileID: 5016345555897430286}
   - component: {fileID: 205332400926967215}
+  - component: {fileID: 905213750362178331}
   m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
@@ -410,6 +549,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 3710445335627725808}
+--- !u!95 &905213750362178331
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440628139808842554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c14e0c2e068c8cf47a018c85f1b07a6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6915541340306449138
 GameObject:
   m_ObjectHideFlags: 0

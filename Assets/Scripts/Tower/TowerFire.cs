@@ -1,8 +1,9 @@
-using UnityEngine;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using Assets.Scripts.Inventory;
 using Assets.Scripts;
+using Assets.Scripts.Inventory;
+using Assets.Scripts.Sounds;
+using JetBrains.Annotations;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class TowerFire : MonoBehaviour, ITakeDamage
 {
@@ -17,7 +18,7 @@ public class TowerFire : MonoBehaviour, ITakeDamage
     public Transform turretPart = null;
     public float rotationSpeed = 10f;
 
-    private float CurrentHealth; 
+    private float CurrentHealth;
 
     protected List<Enemy> enemiesInRange = new List<Enemy>();
 
@@ -46,6 +47,7 @@ public class TowerFire : MonoBehaviour, ITakeDamage
         if (fireCooldown <= 0f)
         {
             Attack(currentTarget);
+            SoundManager.Instance.PlaySound(SoundManager.Instance.TowerShot);
             fireCooldown = 1f / towerStats.fireRate; //fireRate = выстрелы в секунду, мол если он будет 0.5, то это 2 секунды, если же 2, то выстрел каждые 0.5 секунд
         }
     }
@@ -129,6 +131,10 @@ public class TowerFire : MonoBehaviour, ITakeDamage
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
-        if (CurrentHealth <= 0) Destroy(gameObject);
+        if ((CurrentHealth <= 0))
+        {
+            Destroy(gameObject);
+            SoundManager.Instance.PlaySound(SoundManager.Instance.TowerDestroy);
+        }
     }
 }
