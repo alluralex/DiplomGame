@@ -14,4 +14,5 @@ public class StatisticHero
     public int CompletedCrafts;
 
     public bool TutorialCompleted = false;
+    public bool IsAdmin = false;
 }

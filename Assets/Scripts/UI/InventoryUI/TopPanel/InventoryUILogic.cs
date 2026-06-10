@@ -20,6 +20,7 @@ namespace Assets.Scripts.UI.InventoryUI
 
         public HeroRotator heroRotator;
 
+        public Hero heroBlock;
 
         [SerializeField] private GameObject InventoryButton;
         [SerializeField] private GameObject CraftButton;
@@ -27,6 +28,7 @@ namespace Assets.Scripts.UI.InventoryUI
         [SerializeField] private GameObject UpgradeButton;
         [SerializeField] private GameObject CompassButton;
         [SerializeField] private GameObject ShopButton;
+        [SerializeField] private GameObject AdminButton;
 
         public void OpenClose(InputAction.CallbackContext button)
         {
@@ -40,14 +42,14 @@ namespace Assets.Scripts.UI.InventoryUI
                 heroRotator.CursorUnblock();
                 UICanvas.enabled = false;
                 InventoryCanvas.enabled = true;
-                Time.timeScale = 0f;
+                heroBlock.InCar = false;
             }
             else
             {
                 heroRotator.CursosBlock();
                 UICanvas.enabled = true;
                 InventoryCanvas.enabled = false;
-                Time.timeScale = 1f;
+                heroBlock.InCar = true;
             }
         }
 
@@ -82,6 +84,7 @@ namespace Assets.Scripts.UI.InventoryUI
             UpgradeButton.SetActive(false);
             CompassButton.SetActive(false);
             ShopButton.SetActive(false);
+            AdminButton.SetActive(false);
 
             switch (index)
             {
@@ -91,6 +94,7 @@ namespace Assets.Scripts.UI.InventoryUI
                 case 3: UpgradeButton.SetActive(true); break;
                 case 4: CompassButton.SetActive(true); break;
                 case 5: ShopButton.SetActive(true); break;
+                case 6: AdminButton.SetActive(true); break;
             }
         }
     }

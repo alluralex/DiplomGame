@@ -29,7 +29,7 @@ public class ShopManager : MonoBehaviour
         {
             Slot slot = slotsOfArtefacts[i];
             slot.item = i < available.Count ? available[i] : null;
-            slot.UpdateVisual(); 
+            slot.UpdateVisual();
 
             ShopItem shopItem = slot.GetComponent<ShopItem>();
             if (shopItem != null)
@@ -65,7 +65,7 @@ public class ShopManager : MonoBehaviour
                     Statistic.ArtefactsBuy++;
                     Statistic.Save();
                     hero.InvokeUpgradeInfoChanged();
-                    RefreshShop(); 
+                    RefreshShop();
                 }
                 else
                 {
@@ -73,6 +73,35 @@ public class ShopManager : MonoBehaviour
                 }
                 break;
 
+        }
+    }
+    public void TakeAdminItem(Inventory inventory, Inventory GoToInventory, Slot slot, ItemType typeItem, Hero hero)
+    {
+        switch (typeItem)
+        {
+            case ItemType.Resource:
+                if (!GoToInventory.HaveFreeSlot())
+                {
+                    Debug.Log("Нет места в инвентаре");
+                    return;
+                }
+                GoToInventory.AddToInventory(slot.item);
+                break;
+            case ItemType.Artefact:
+                if (slot.item.artefactEffect != null)
+                {
+                    slot.item.artefactEffect.Apply(hero);
+                    hero.InvokeUpgradeInfoChanged();
+                }
+                break;
+            case ItemType.Tower:
+                if (!GoToInventory.HaveFreeSlot())
+                {
+                    Debug.Log("Нет места в инвентаре");
+                    return;
+                }
+                GoToInventory.AddToInventory(slot.item);
+                break;
         }
     }
 }

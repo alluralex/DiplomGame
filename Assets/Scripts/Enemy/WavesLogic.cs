@@ -61,22 +61,31 @@ namespace Assets.Scripts
             GlobalEvents.unityEvent.Invoke(currentWave);
         }
 
-        private void NextWave()
+        public void NextWave()
         {
-            int randomIndex = UnityEngine.Random.Range(0, 3);
-            aspect = randomIndex switch
+            if (currentWave != MaxWave)
             {
-                0 => TypeAspect.Lighting,
-                1 => TypeAspect.Magic,
-                2 => TypeAspect.Physics,
-                _ => TypeAspect.Lighting
-            };
 
-            currentWave++;
-            labelWave.text = currentWave.ToString();
-            Debug.Log("Новая волна: " + currentWave);
+                int randomIndex = UnityEngine.Random.Range(0, 3);
+                aspect = randomIndex switch
+                {
+                    0 => TypeAspect.Lighting,
+                    1 => TypeAspect.Magic,
+                    2 => TypeAspect.Physics,
+                    _ => TypeAspect.Lighting
+                };
 
-            StartWave();
+                currentWave++;
+                labelWave.text = currentWave.ToString();
+                Debug.Log("Новая волна: " + currentWave);
+
+                StartWave();
+            }
+            else
+            {
+                Debug.Log("убей босса!");
+                timerLabel.text = "Убей босса!";
+            }
         }
 
         private void UpdateUI()

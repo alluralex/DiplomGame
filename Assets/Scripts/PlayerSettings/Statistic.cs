@@ -55,6 +55,11 @@ namespace Assets.Scripts.PlayerSettings
             get => data.TutorialCompleted;
             set => data.TutorialCompleted = value;
         }
+        public static bool IsAdmin
+        {
+            get => data.IsAdmin;
+            set => data.IsAdmin = value;
+        }
         public static void Save()
         {
             JsonLogic.Save(data, "statistic.json");

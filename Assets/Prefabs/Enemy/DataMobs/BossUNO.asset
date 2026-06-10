@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: BossUNO
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Enemy.EnemyData
   ID: 0
-  MaxHealth: 40
-  Health: 40
+  MaxHealth: 500
+  Health: 500
   Damage: 3
   HealthPerWave: 100
   DamagePerWave: 100
-  MoneyDrop: 100
+  MoneyDrop: 0
   TypeEnemy: 3
   IsBoss: 1

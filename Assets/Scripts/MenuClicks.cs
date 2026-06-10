@@ -99,5 +99,11 @@ namespace Assets.Scripts.UI.EscMenu
         {
             Application.Quit();
         }
+
+        public void RestartTutorial()
+        {
+            Statistic.TutorialCompleted = false;
+            Statistic.Save();
+        }
     }
 }

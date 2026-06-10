@@ -22,7 +22,7 @@ public class InteractionWithObjects : MonoBehaviour
     {
         if (button.performed)
         {
-            if (isInCar && Time.timeScale == 1f) 
+            if (isInCar && Time.timeScale == 1f && hero.InCar == true) 
             {
                 ExitCar();
                 return;
@@ -40,7 +40,7 @@ public class InteractionWithObjects : MonoBehaviour
                     DropResource();
                     MineResource();
                 }
-                if (hit.collider.CompareTag("Car"))
+                if (hit.collider.CompareTag("Car") && hero.InCar == true)
                 {
                     hero = gameObject.GetComponent<Hero>();
 

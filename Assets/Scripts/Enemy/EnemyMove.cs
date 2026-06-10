@@ -24,6 +24,10 @@ public class EnemyMove : MonoBehaviour
         Vector3 direction = target.transform.position - transform.position;
         direction.Normalize();
         movement = direction;
+        if (Time.timeScale != 0)
+        {
+            speed = speed += 0.00005f;
+        }
     }
     private void FixedUpdate()
     {

@@ -25,6 +25,8 @@ public class Hero : MonoBehaviour
 
     public List<ArtefactEffect> Artefacts = new List<ArtefactEffect>();
 
+    public bool InCar;
+
     public event Action OnUpgradeInfoChanged;
 
     void OnTriggerEnter(Collider other)

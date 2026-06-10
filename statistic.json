@@ -1,11 +1,12 @@
 {
-    "EnemiesDied": 149,
-    "TotalAttempts": 149,
-    "CompletedAttempts": 5,
-    "MoneyEarned": 8072,
+    "EnemiesDied": 294,
+    "TotalAttempts": 175,
+    "CompletedAttempts": 7,
+    "MoneyEarned": 39902,
     "ArtefactsBuy": 211,
-    "FieldBuy": 62,
+    "FieldBuy": 110,
     "HealthGetCar": 11,
     "CompletedCrafts": 28,
-    "TutorialCompleted": true
+    "TutorialCompleted": true,
+    "IsAdmin": false
 }
