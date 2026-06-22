@@ -16,6 +16,7 @@ namespace Assets.Scripts.UI.EscMenu
 
 
         [SerializeField] private GameObject MainMenu;
+        [SerializeField] private GameObject Compenduim;
 
         [SerializeField] private GameObject Settings;
 
@@ -64,6 +65,14 @@ namespace Assets.Scripts.UI.EscMenu
             StatisticMenu.SetActive(true);
             MainMenu.SetActive(true);
             Menu.SetActive(false);
+        }
+        public void OpenCompendium()
+        {
+            Compenduim.SetActive(true);
+        }
+        public void CloseCompendium()
+        {
+            Compenduim?.SetActive(false);
         }
 
         public void CloseStatistic()
